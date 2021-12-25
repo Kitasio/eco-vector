@@ -1,0 +1,23 @@
+---
+import Nav from '../components/Nav.svelte'
+import Card from '../components/Card.svelte'
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+</head>
+<body>
+    <Nav client:visible />
+    <div class="xl:px-20">
+        <Card 
+            client:load 
+            color={"eco-green"} 
+            imgPath={"/assets/images/journal-releases.svg"} 
+            heading={"Издание журналов"} text={"Издательство «Эко-Вектор» выпускает более 100 научных и научно-практических рецензируемых периодических печатных и сетевых журналов по различным направлениям науки."} 
+        />
+    </div>
+</body>
+</html>

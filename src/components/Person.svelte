@@ -1,0 +1,31 @@
+<script lang="ts">
+    export let name = "Иван Иванов Иванович";
+    export let img = "https://picsum.photos/50/50";
+    export let text = "";
+</script>
+
+<div class="rounded shadow-brand p-5 md:p-7">
+    <!-- MOBILE -->
+    <div class="flex items-center space-x-3 md:hidden">
+        <div class="avatar">
+            <div class="rounded-full w-16 h-16">
+                <img src={img} alt="avatar" />
+            </div>
+        </div>
+        <h1 class="text-xl font-bold">{name}</h1>
+    </div>
+    <p class="small-text md:hidden mt-3">{text}</p>
+
+    <!-- DESKTOP -->
+    <div class="md:flex items-center space-x-3 lg:space-x-5 hidden">
+        <div class="avatar">
+            <div class="rounded-full w-24 h-24">
+                <img src={img} alt="avatar" />
+            </div>
+        </div>
+        <div>
+            <h1 class="text-xl font-bold">{name}</h1>
+            <p class="small-text">{text}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+---
+import Nav from '../components/Nav.svelte'
+import Card from '../components/Card.svelte'
+import Person from '../components/Person.svelte'
+import Carousel from '../components/Carousel.svelte'
+
+const people = [
+    { name: 'Айламазян Эдуард Карпович', img: 'https://picsum.photos/50/50', text: 'д-р мед. наук, профессор РАН, руководитель отдела гинекологии и эндокринологии ФГБНУ «НИИ акушерства, гинекологиии репродуктологии им. Д.О. Отта», профессор кафедры акушерства и гинекологии ГБОУ ВПО «Северо-Западный государственный медицинский университет им. И.И. Мечникова» Минздрава России;'},
+    { name: 'Ярмолинская Мария Игоревна', img: 'https://picsum.photos/60/60', text: 'д-р мед. наук, профессор РАН, руководитель профессор кафедры акушерства и гинекологии ГБОУ ВПО «Северо-Западный государственный медицинский университет им. И.И. Мечникова» Минздрава России;'},
+]
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+</head>
+<body>
+    <Nav client:visible />
+    <div class="xl:px-20">
+        <Card client:load color={"eco-purple"} imgPath={"/assets/images/book-releases.svg"} />
+    </div>
+
+    <div class="container">
+        <div class="space-y-10 md:space-y-0 md:grid grid-cols-3 gap-5 xl:gap-20">
+            <div class="space-y-3 lg:space-y-5 md:col-span-2 base-text">
+                <h1 class="heading">Об издательстве</h1>
+                <p>Издательство оказывает полный комплекс услуг для авторов: от&nbsp;редактуры до&nbsp;фактического издания работы на&nbsp;бумажных или электронных носителях.</p>
+                <p>Хотите издать свою работу? Подайте заявку</p>
+                <a href="/book-releases" class="btn btn-outline border-2 rounded border-eco-purple text-eco-purple hover:text-white hover:bg-eco-purple hover:border-eco-purple xl:btn-lg">Издать книгу</a>
+            </div>
+            <div class="font-bold space-y-3 lg:space-y-5">
+                <h1 class="text-lg opacity-60">БЕРЕМ НА СЕБЯ</h1>
+                <div class="xl:text-lg">
+                    <p>Оформление метаданных</p>
+                    <p>Присвоение DOI и публикация online</p>
+                    <p>Печать тиража</p>
+                    <p>Распространение</p>
+                    <p>Индексация в базах данных</p>
+                </div>
+                <div>
+                    <a href="/book-releases" class="text-eco-purple font-normal text-sm xl:text-lg">Все услуги</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full bg-carousel py-10">
+        <div class="container">
+            <Carousel />
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="base-text space-y-5">
+            <h1 class="heading">Наши авторы</h1>
+            <p>Мы&nbsp;сотрудничаем с&nbsp;огромным количеством авторов научных работ любого объема, от&nbsp;статей до&nbsp;книг. Среди наших авторов&nbsp;&mdash; именитые ученые современности</p>
+        </div>
+        <div class="mt-10 space-y-5">
+            {people.map((i) => (
+                <div>
+                    <Person name={i.name} img={i.img} text={i.text} client:visible></Person>
+                </div>
+            ))}
+        </div>
+    </div>
+
+</body>
+</html>
