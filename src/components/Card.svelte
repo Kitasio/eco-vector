@@ -2,8 +2,8 @@
     export let color = 'eco-purple'
     export let imgPath = '';
     export let btnText = 'Подробнее';
-    export let heading = 'Издание книг и еще вяких плюшек и ватрушек';
-    export let text = 'Издательство «Эко-Вектор» ежегодно, с 2009 года, издает десятки монографий, учебников, учебных и учебно-методических пособий Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s';
+    export let heading = 'Издание книг';
+    export let text = 'Издательство «Эко-Вектор» ежегодно, с 2009 года, издает десятки монографий, учебников, учебных и учебно-методических пособий';
 </script>
 
 <div class="bg-{color} w-full text-white flex flex-col items-center py-10 px-5 sm:flex-row max-w-screen-2xl mx-auto xl:px-20 2xl:px-40 sm:justify-between xl:rounded-b">
