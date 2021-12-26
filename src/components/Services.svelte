@@ -80,7 +80,7 @@
     </div>
 
     <!-- DESKTOP -->
-    <div class="hidden lg:grid grid-cols-4 grid-rows-2 gap-10 mt-5">
+    <div class="hidden lg:grid grid-cols-4 gap-10 mt-5">
         {#if active}
             <div class="col-span-1 space-y-2">
                 {#each items as i, index (index)}
@@ -94,7 +94,7 @@
                     </h1>
                 {/each}
             </div>
-            <div class="col-span-3 rounded shadow-brand p-10 min-h-32 row-span-2">
+            <div class="col-span-3 rounded shadow-brand p-10 min-h-32">
                 {#key active}
                     <div
                         class="w-full space-y-5"
