@@ -1,0 +1,79 @@
+<!-- MOBILE -->
+<div class="container md:hidden">
+    <p class="font-medium text-sm">Узнавайте о новостях, бесплатных доступах к продуктам, вебинарах и мероприятиях Эко-Вектор</p>
+    <form action="" class="mt-5 space-y-3">
+        <input class="bg-[#1B1B1D] outline-none border-b-2 border-white p-2 mr-5" type="email" placeholder="Email">
+        <button type="submit" class="btn btn-outline border-white border-2 text-white">подписаться</button>
+    </form>
+    <div class="mt-10 w-32 mx-auto flex items-center justify-between">
+        <a href="/">
+            <img src="/assets/icons/inst.png" alt="instagram" class="hover:scale-105 transition">
+        </a>
+        <a href="/">
+            <img src="/assets/icons/fb.svg" alt="facebook" class="hover:scale-105 transition">
+        </a>
+        <a href="/">
+            <img src="/assets/icons/vk.svg" alt="vk" class="hover:scale-105 transition">
+        </a>
+    </div>
+    <div class="mt-5 w-32 flex mx-auto">
+        <img src="/assets/logo-white.svg" alt="logo" class="w-full">
+    </div>
+
+    <div class="grid grid-cols-2 mt-10">
+        <div class="flex flex-col">
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Издание книг</a>
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Ресурсы</a>
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Издание</a>
+        </div>
+        <div class="flex flex-col">
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Услуги</a>
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Партнеры</a>
+        </div>
+    </div>
+    <div class="mt-10">©Эко-Вектор {new Date().getFullYear()}</div>
+</div>
+
+<!-- DESKTOP -->
+<div class="container hidden md:grid grid-cols-2">
+    <div class="grid grid-cols-2 font-medium text-lg max-w-sm">
+        <div class="flex flex-col">
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Издание книг</a>
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Ресурсы</a>
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Издание</a>
+        </div>
+        <div class="flex flex-col">
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Услуги</a>
+            <a href="/" class="hover:underline decoration-2 underline-offset-4">Партнеры</a>
+        </div>
+    </div>
+
+    <div>
+        <p class="font-medium text-lg">Узнавайте о новостях, бесплатных доступах к продуктам, вебинарах и мероприятиях Эко-Вектор</p>
+        <form action="" class="mt-5 space-y-3">
+            <input class="bg-[#1B1B1D] outline-none border-b-2 border-white p-2 mr-5" type="email" placeholder="Email">
+            <button type="submit" class="btn btn-outline border-white border-2 text-white">подписаться</button>
+        </form>
+    </div>
+
+    <div class="mt-10">
+        <div class="mt-10 w-32 flex items-center justify-between">
+            <a href="/">
+                <img src="/assets/icons/inst.png" alt="instagram" class="hover:scale-105 transition">
+            </a>
+            <a href="/">
+                <img src="/assets/icons/fb.svg" alt="facebook" class="hover:scale-105 transition">
+            </a>
+            <a href="/">
+                <img src="/assets/icons/vk.svg" alt="vk" class="hover:scale-105 transition">
+            </a>
+        </div> 
+    </div>
+
+    <div class="mt-10 flex space-x-10 items-end">
+        <div class="mt-5 w-32 flex">
+            <img src="/assets/logo-white.svg" alt="logo" class="w-full">
+        </div>
+        <div class="-mb-1">©Эко-Вектор {new Date().getFullYear()}</div>
+    </div>
+</div>

@@ -4,6 +4,7 @@ import Card from '../components/Card.svelte'
 import Person from '../components/Person.svelte'
 import Carousel from '../components/Carousel.svelte'
 import Services from '../components/Services.svelte'
+import Footer from '../components/Footer.svelte'
 
 const people = [
     { name: 'Айламазян Эдуард Карпович', img: 'https://picsum.photos/50/50', text: 'д-р мед. наук, профессор РАН, руководитель отдела гинекологии и эндокринологии ФГБНУ «НИИ акушерства, гинекологиии репродуктологии им. Д.О. Отта», профессор кафедры акушерства и гинекологии ГБОУ ВПО «Северо-Западный государственный медицинский университет им. И.И. Мечникова» Минздрава России;'},
@@ -205,27 +206,8 @@ const services = [
         <Services client:visible items={services} />
     </div>
 
-    <footer class="p-10 footer bg-neutral text-neutral-content">
-            <div>
-                <span class="footer-title">Services</span> 
-                <a class="link link-hover">Branding</a> 
-                <a class="link link-hover">Design</a> 
-                <a class="link link-hover">Marketing</a> 
-                <a class="link link-hover">Advertisement</a>
-            </div> 
-            <div>
-                <span class="footer-title">Company</span> 
-                <a class="link link-hover">About us</a> 
-                <a class="link link-hover">Contact</a> 
-                <a class="link link-hover">Jobs</a> 
-                <a class="link link-hover">Press kit</a>
-            </div> 
-            <div>
-                <span class="footer-title">Legal</span> 
-                <a class="link link-hover">Terms of use</a> 
-                <a class="link link-hover">Privacy policy</a> 
-                <a class="link link-hover">Cookie policy</a>
-            </div>
-    </footer>
+    <div class="w-full bg-[#1B1B1D] text-white">
+        <Footer client:visible />
+    </div>
 </body>
 </html>

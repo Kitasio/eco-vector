@@ -26,8 +26,8 @@
     };
 </script>
 
-<div class="space-y-5 py-10 md:container relative">
-    <div class="flex flex-col md:flex-row md:justify-between md:items-center px-5 md:px-0">
+<div class="space-y-10 py-10 md:container relative">
+    <div class="flex space-y-2 flex-col md:flex-row md:justify-between md:items-center px-5 md:px-0">
         <h1 class="heading">{title}</h1>
         <a class="flex space-x-5 md:space-x-10 items-center md:mt-2 group" href={link}>
             <p class="whitespace-nowrap text-blue-500 group-hover:text-blue-600 transition font-semibold">{linkName}</p>
@@ -41,7 +41,7 @@
             <div animate:flip id="slide{index}" class="carousel-item">
                 <a href={i.link} class="w-52">
                     <img class="aspect-[2/3] w-full" src={i.img} alt="" />
-                    <p class="text-lg font-bold">{i.cost}</p>
+                    <p class="text-xl font-bold mt-1">{i.cost}</p>
                     <p class="mt-1 font-semibold text-blue-500">{i.name}</p>
                     <p class="font-light">{i.text}</p>
                 </a>
@@ -64,7 +64,7 @@
                             src={i.img}
                             alt=""
                         />
-                        <p class="text-lg font-bold">{i.cost}</p>
+                        <p class="text-xl font-bold mt-1">{i.cost}</p>
                         <p class="mt-1 font-semibold text-blue-500">{i.name}</p>
                         <p class="font-light">{i.text}</p>
                     </a>
