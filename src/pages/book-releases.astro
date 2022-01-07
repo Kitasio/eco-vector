@@ -1,10 +1,11 @@
 ---
-import Nav from '../components/Nav.svelte'
-import Card from '../components/Card.svelte'
-import Person from '../components/Person.svelte'
-import Carousel from '../components/Carousel.svelte'
-import Services from '../components/Services.svelte'
-import Footer from '../components/Footer.svelte'
+import Nav from '../components/Nav.astro'
+import Card from '../components/Card.astro'
+import Person from '../components/Person.astro'
+import Carousel from '../components/Carousel.astro'
+import Carousel2 from '../components/Carousel2.astro'
+import Services from '../components/Services.astro'
+import Footer from '../components/Footer.astro'
 
 const people = [
     { name: 'Айламазян Эдуард Карпович', img: 'https://picsum.photos/50/50', text: 'д-р мед. наук, профессор РАН, руководитель отдела гинекологии и эндокринологии ФГБНУ «НИИ акушерства, гинекологиии репродуктологии им. Д.О. Отта», профессор кафедры акушерства и гинекологии ГБОУ ВПО «Северо-Западный государственный медицинский университет им. И.И. Мечникова» Минздрава России;'},
@@ -15,58 +16,66 @@ const items1 = [
 {
             img: "https://picsum.photos/id/500/200/300",
             cost: "1600 ₽",
-            name: "Инге-Вечтомов С.Г.",
-            text: "Лекарственные растения и здоровье человека",
+            name: "Андрей Азербайджан",
+            text: "В каждом из нас живет самка динозавра сиамского периода",
             link: "/book-releases",
             id: "image1",
         },
         {
             img: "https://picsum.photos/id/501/200/300",
             cost: "1600 ₽",
-            name: "Инге-Вечтомов С.Г.",
-            text: "Лекарственные растения и здоровье человека",
+            name: "Вероятно Медик",
+            text: "С кривой логикой приходит прямоугольная метка королевского вомбата",
             link: "/book-releases",
             id: "image2",
         },
         {
             img: "https://picsum.photos/id/502/200/300",
             cost: "1600 ₽",
-            name: "Инге-Вечтомов С.Г.",
-            text: "Лекарственные растения и здоровье человека",
+            name: "Стопудов Семашкович",
+            text: "Соня хотела как лучше, но что поделаешь после такого исполинского сеанса экзорцизма",
             link: "/book-releases",
             id: "image3",
         },
         {
             img: "https://picsum.photos/id/503/200/300",
             cost: "1600 ₽",
-            name: "Инге-Вечтомов С.Г.",
-            text: "Лекарственные растения и здоровье человека",
+            name: "Косвенная улитка",
+            text: "Злой кот, но забавная история появления скептиков на острове отца большой кисы",
             link: "/book-releases",
             id: "image4",
         },
         {
             img: "https://picsum.photos/id/504/200/300",
             cost: "1600 ₽",
-            name: "Инге-Вечтомов С.Г.",
-            text: "Лекарственные растения и здоровье человека",
+            name: "Сальса Верная",
+            text: "Кто же ты такой? Монстр? Киборг? или просто Крот?",
             link: "/book-releases",
             id: "image5",
         },
         {
             img: "https://picsum.photos/id/505/200/300",
             cost: "1600 ₽",
-            name: "Инге-Вечтомов С.Г.",
-            text: "Лекарственные растения и здоровье человека",
+            name: "Зимая Великая Душка",
+            text: "И все таки нам всем ужасненько повезло, ведь есть вещи похуже кариеса, но не у нас",
             link: "/book-releases",
             id: "image6",
         },
         {
             img: "https://picsum.photos/id/506/200/300",
             cost: "1600 ₽",
+            name: "Зубатка Тополь",
+            text: "Хотите коры коралла? а нет таких вещей в природе морской",
+            link: "/book-releases",
+            id: "image7",
+        },
+        {
+            img: "https://picsum.photos/id/508/200/300",
+            cost: "1600 ₽",
             name: "Инге-Вечтомов С.Г.",
             text: "Лекарственные растения и здоровье человека",
             link: "/book-releases",
-            id: "image7",
+            id: "image9",
         },
 ]
 
@@ -130,7 +139,7 @@ const items2 = [
 ]
 
 const services = [
-    { shown: false, link: "/book-releases", title: "Редактирование", text: "В издательстве Эко-Вектор проводится как литературное, так и научное редактирование текстов произведений авторов. В наш коллектив литературных редакторов входят профессионалы с большим стажем работы с научными текстами по разным направлениям, в том числе по медицине. Мы придерживаемся строгих издательских стандартов подготовки научных текстов, основанных как на ГОСТах, так и на международных требованиях, а в своей работе используем наиболее авторитетные источники данных." },
+    { shown: false, link: "/book-releases", title: "Редактирование", text: `В издательстве Эко-Вектор проводится как литературное, так и научное редактирование текстов произведений авторов. В наш коллектив литературных редакторов входят профессионалы с большим стажем работы с научными текстами по разным направлениям, в том числе по медицине. Мы придерживаемся строгих издательских стандартов подготовки научных текстов, основанных как на ГОСТах, так и на международных требованиях, а в своей работе используем наиболее авторитетные источники данных.` },
     { shown: false, link: "/book-releases", title: "Верстка и дизайн", text: ` Дизайн и верстка – два неотъемлемых компонента при создании любого издания.
 
 Коллектив художественных редакторов Эко-Вектор Дизайн создает идею и образ будущего издания, его стиль и индивидуальность, обеспечивая привлекательность для читателя. Верстка является продолжением дизайна, воплощением его результатов в жизнь в графическом виде. Наша верстка (с шрифтовыми выделениями, таблицами, формулами, иллюстрациями с подписью) сделает текст удобным для восприятия, стилистически грамотным.
@@ -151,7 +160,7 @@ const services = [
 <body>
     <Nav client:visible />
     <div class="xl:px-20">
-        <Card client:load color={"eco-purple"} imgPath={"/assets/images/book-releases.svg"} />
+        <Card client:visible color={"eco-purple"} imgPath={"/assets/images/book-releases.svg"} text={"Издательство «Эко-Вектор» ежегодно, с 2009 года, издает десятки монографий, учебников, учебных и учебно-методических пособий"} heading={"Издание книг"} btnText={"Подробнее"} />
     </div>
 
     <div class="container">
@@ -160,11 +169,11 @@ const services = [
                 <h1 class="heading">Об издательстве</h1>
                 <p>Издательство оказывает полный комплекс услуг для авторов: от&nbsp;редактуры до&nbsp;фактического издания работы на&nbsp;бумажных или электронных носителях.</p>
                 <p>Хотите издать свою работу? Подайте заявку</p>
-                <a href="/book-releases" class="btn btn-outline border-2 rounded border-eco-purple text-eco-purple hover:text-white hover:bg-eco-purple hover:border-eco-purple xl:btn-lg">Издать книгу</a>
+                <a href="/book-releases" class="btn btn-outline border-2 rounded border-eco-purple text-eco-purple hover:text-white hover:bg-eco-purple hover:border-eco-purple">Издать книгу</a>
             </div>
-            <div class="font-bold space-y-3 lg:space-y-5">
+            <div class="font-bold md:pt-2 space-y-3 lg:space-y-5">
                 <h1 class="text-lg opacity-60">БЕРЕМ НА СЕБЯ</h1>
-                <div class="xl:text-lg">
+                <div class="xl:text-md">
                     <p>Оформление метаданных</p>
                     <p>Присвоение DOI и публикация online</p>
                     <p>Печать тиража</p>
@@ -198,7 +207,7 @@ const services = [
     </div>
 
     <div class="w-full bg-carousel">
-        <Carousel client:visible title={"Зарубежные издания"} linkName={"ПЕРЕЙТИ КО ВСЕМУ КАТАЛОГУ"} link={"/book-releases"} items={items2} />
+        <Carousel2 client:visible title={"Зарубежные издания"} linkName={"ПЕРЕЙТИ КО ВСЕМУ КАТАЛОГУ"} link={"/book-releases"} items={items2} />
     </div>
 
 

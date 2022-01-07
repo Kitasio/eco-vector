@@ -3,13 +3,13 @@
 @tailwind utilities;
 @layer components {
     .container {
-        @apply px-5 py-10 xl:py-20 xl:px-40 max-w-screen-2xl mx-auto;
+        @apply px-5 py-10 xl:py-20 xl:px-24 max-w-screen-xl mx-auto;
     }
     .heading {
-        @apply text-3xl font-bold lg:text-4xl;
+        @apply text-2xl font-semibold lg:text-3xl text-black;
     }
     .base-text {
-        @apply lg:text-lg font-light xl:text-xl;
+        @apply lg:text-lg font-light text-black;
     }
     .small-text {
         @apply text-sm text-gray-700 lg:text-base;
