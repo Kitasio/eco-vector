@@ -11,7 +11,7 @@ const {color, imgPath, btnText, heading, text} = Astro.props
             <div name="text">{text}</div>
         </span>
         <div class="flex items-center mt-5">
-            <a href="/book-releases" class="btn btn-outline text-white hover:bg-white hover:text-{color} border-white border-2 hover:border-white rounded">{btnText}</a>
+            <a href="/book-releases" class=`btn btn-outline text-white hover:bg-white hover:text-${color} border-white border-2 hover:border-white rounded`>{btnText}</a>
         </div>
     </div>
     <img src={imgPath} alt="icon" class="hidden sm:inline-block w-48 md:w-60 lg:w-96">
