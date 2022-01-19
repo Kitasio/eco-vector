@@ -1,0 +1,180 @@
+---
+import Nav from '../components/Nav.astro'
+import Card from '../components/Card.astro'
+import Footer from '../components/Footer.astro'
+
+const items1 = [
+    { img: '/assets/icons/it-1.svg', title: 'Инструкции', sub: 'Для авторов читателей'},
+    { img: '/assets/icons/it-2.svg', title: 'Онлайн', sub: 'в удобное время'},
+    { img: '/assets/icons/it-3.svg', title: 'Статистика', sub: 'Альтметрика для статей'},
+    { img: '/assets/icons/it-4.svg', title: 'Мультиформат', sub: 'Тексты статей во всех форматах'},
+]
+
+const text1 = [
+    '- Бесплатная система с&nbsp;открытым кодом, свободно скачиваемая и&nbsp;устанавливаемая, дающая пользователю неограниченные возможности модификации внешнего вида и&nbsp;функционала',
+    '- Гибкая система электронного документооборота, настраиваемая под особенности каждого журнала/издателя',
+    '- Система приема статей от&nbsp;авторов онлайн, совмещенная с&nbsp;системой электронного документооборота редакции',
+    '- Поддержка различных вариантов распространения журнала: открытый доступ, отсроченный открытый доступ и&nbsp;подписной режим с&nbsp;модулем управления подпиской',
+    '- В&nbsp;систему интегрированы сервисы для научных публикаций, такие как Crossref, ORCiD и&nbsp;DOAJ',
+    '- Система рекомендована Google Scholar для наилучшей индексации публикуемого контента',
+]
+const text2 = [
+    'Бесплатная система с&nbsp;открытым кодом, свободно скачиваемая и&nbsp;устанавливаемая, дающая пользователю неограниченные возможности модификации внешнего вида и&nbsp;функционала',
+    'Гибкая система электронного документооборота, настраиваемая под особенности каждого журнала/издателя',
+    'Система приема статей от&nbsp;авторов онлайн, совмещенная с&nbsp;системой электронного документооборота редакции',
+    'Поддержка различных вариантов распространения журнала: открытый доступ, отсроченный открытый доступ и&nbsp;подписной режим с&nbsp;модулем управления подпиской',
+    'В&nbsp;систему интегрированы сервисы для научных публикаций, такие как Crossref, ORCiD и&nbsp;DOAJ',
+    'Система рекомендована Google Scholar для наилучшей индексации публикуемого контента',
+]
+
+const cards = [
+    {title: 'JEC', price: '80 000 ₽', aboutPrice: 'Ежемесячный платеж за журнал', text: 'Размещение журнала на нашем портале', list: [
+        'Собственный или корпоративный домен',
+        'Индивидуальный дизайн и CSS-макет',
+        'Постатейный архив',
+        'Неограниченное серверное пространство',
+        'Ежедневное резервное копирование',
+        'Единая электронная редакция и база пользователей',
+        'Обучение коллектива редакции',
+    ]},
+    {title: 'BOX', price: '160 000 ₽', aboutPrice: 'Однократная оплата', text: 'Установка издательской платформы на собственный сервер Заказчика ', list: [
+        'Настройка сервера Заказчика',
+        'Домен Заказчика',
+        'Индивидуальный дизайн и CSS-макет',
+        'Открытый код для внесения любых изменений',
+        'Постатейный архив',
+        'Закрытая база пользователей',
+        'Обучение коллектива редакции',
+    ]},
+    {title: 'СОПРОВОЖДЕНИЕ', price: '9500 ₽ ', aboutPrice: 'Ежемесячный платеж за журнал', text: 'Абонентское обслуживание включает в себя: ', list: [
+        'Техническая поддержка 24/7',
+        'Постатейное размещение выпусков в PDF, HTML, XML',
+        'Индексация в базах данных (Crossref, РИНЦ, DOAJ, MEDLINE, EBSCO, SCOPUS, WoS, CNKI) ',
+        'Индивидуализация работы электронной редакции',
+        'Внесение любых изменений в сайт журнала',
+        'Аудит журнала, составление заявок на индексацию в базах данных',
+        'Регистрация DOI публикациям, доступ к издательским и редакционным сервисам.',
+    ]},
+]
+
+const examples = [
+    {img: '/assets/images/primer.jpg', text: 'Digital Diagnostics'},
+    {img: '/assets/images/primer2.jpg', text: 'Вестник Самарского университета'},
+    {img: '/assets/images/primer3.jpg', text: 'Терапевтический архив'},
+]
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+</head>
+<body>
+    <Nav client:visible />
+    <div class="xl:px-20">
+        <Card 
+            client:load 
+            color={"eco-gray"} 
+            imgPath={"/assets/images/it-platform.svg"} 
+            btnText={"Подробнее"}
+            heading={"Платформа научных журналов"} text={"Издательство Эко-вектор с 2014 года разрабатывает собственную редакционно-издательскую платформу для размещения научных журналов и работы редакций в сети"} 
+        />
+    </div>
+
+    <div class="container">
+        <div class="space-y-10 md:space-y-0 md:grid grid-cols-2 gap-5 xl:gap-36">
+            <div class="space-y-3 lg:space-y-5 base-text max-w-lg">
+                <h1 class="heading">О платформе</h1>
+                <p>Мы&nbsp;создали для вас уникальную платформу, которая сочетает в&nbsp;себе лучшие международные практики, и&nbsp;отвечает всем требованиям индексирующих баз данных, поисковых систем и&nbsp;регуляторов в&nbsp;сфере.</p>
+                <p>Мы&nbsp;объединили международный опыт (исходный код OJS) и&nbsp;собственные разработки в&nbsp;сфере электронного документооборота, рецензирования, редактирования и&nbsp;публикации научного контента онлайн в&nbsp;инновационный продукт, доступный каждому научному журналу.</p>
+            </div>
+            <div class="md:pl-20 xl:pl-32">
+                <div class="grid grid-cols-2 gap-10 mt-14">
+                    {items1.map((item) => (
+                        <a href="/">
+                            <div class="flex flex-col items-center">
+                                <img src={item.img} alt="">
+                                <div class="font-semibold text-center mt-1">{item.title}</div>
+                                <p class="text-center font-normal">{item.sub}</p>
+                            </div>
+                        </a> 
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="font-semibold text-gray-500 text-lg sm:text-xl lg:text-2xl">Платформа</h2>
+        <h1 class="max-w-screen-sm lg:max-w-screen-lg mt-2 text-gray-800 font-semibold text-xl sm:text-2xl lg:text-4xl">Мы&nbsp;объединили исходный код Open Journal System и&nbsp;собственные разработки</h1>
+
+        <div class="grid grid-cols-4 gap-x-16 mt-10">
+
+            <div class="hidden sticky w-56 z-10 bg-white top-32 col-span-1 place-self-start lg:flex items-center py-10 px-14 shadow-brand rounded-lg">
+                <img src="/assets/images/ojs.png" alt="">
+            </div>
+            <div class="col-span-4 lg:col-span-3 space-y-10 max-w-screen-md">
+                {text1.map((t) => (
+                    <p class="text-gray-800">{t}</p>
+                ))}
+            </div>
+
+            <div class="sticky hidden w-56 mt-10 top-[330px] col-span-1 place-self-start lg:flex items-center py-5 px-14 bg-eco-gray shadow-brand rounded-lg">
+                <img src="/assets/icons/eco-white.svg" alt="">
+            </div>
+            <div class="col-span-4 lg:col-span-3 space-y-10 mt-10 max-w-screen-md">
+                <h1 class="heading tracking-wide">Наши нововведения специально для вас</h1>
+                {text2.map((t) => (
+                    <div class="flex space-x-2 items-start">
+                        <img class="w-4 stroke-inherit mt-1" src="/assets/icons/check.svg" alt="">
+                        <p class="text-gray-800">{t}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="font-semibold text-gray-500 text-lg sm:text-xl lg:text-2xl">Варианты</h2>
+        <h1 class="max-w-screen-sm lg:max-w-screen-lg mt-2 text-gray-800 font-semibold text-xl sm:text-2xl lg:text-4xl">Варианты, которые максимально раскроют возможности для Вас</h1>
+
+        <div class="flex flex-wrap gap-10 mt-10">
+            {cards.map((card) => (
+                <div class="p-5 rounded-lg shadow-brand w-full sm:w-80">
+                    <h1 class="heading font-bold">{card.title}</h1>
+                    <h1 class="mt-2 tracking-wider text-3xl lg:text-4xl font-bold">{card.price}</h1>
+                    <p class="text-sm text-gray-600">{card.aboutPrice}</p>
+                    <a href="/" class="btn btn-outline my-4 border-2 rounded border-eco-blue text-eco-blue hover:text-white hover:bg-eco-blue hover:border-eco-blue">заказать</a>
+                    <p class="font-medium">{card.text}</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mt-3">
+                        {card.list.map((i) => (
+                            <li class="flex items-start space-x-1">
+                                <img class="w-4 mt-0.5 stroke-inherit" src="/assets/icons/check.svg" alt="">
+                                <p>{i}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="font-semibold text-gray-500 text-lg sm:text-xl lg:text-2xl">Примеры</h2>
+
+        <div class="flex flex-wrap gap-10 mt-10">
+            {examples.map((i) => (
+                <a href="/" class="flex space-x-3 w-80">
+                    <img class="w-32" src={i.img} alt="">
+                    <p class="text-gray-500 font-medium">{i.text}</p>
+                </a>
+            ))}
+        </div>
+    </div>
+
+    <div class="w-full bg-[#1B1B1D] text-white">
+        <Footer client:visible />
+    </div>
+</body>
+</html>
