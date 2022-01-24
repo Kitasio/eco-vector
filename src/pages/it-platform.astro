@@ -11,12 +11,12 @@ const items1 = [
 ]
 
 const text1 = [
-    '- Бесплатная система с&nbsp;открытым кодом, свободно скачиваемая и&nbsp;устанавливаемая, дающая пользователю неограниченные возможности модификации внешнего вида и&nbsp;функционала',
-    '- Гибкая система электронного документооборота, настраиваемая под особенности каждого журнала/издателя',
-    '- Система приема статей от&nbsp;авторов онлайн, совмещенная с&nbsp;системой электронного документооборота редакции',
-    '- Поддержка различных вариантов распространения журнала: открытый доступ, отсроченный открытый доступ и&nbsp;подписной режим с&nbsp;модулем управления подпиской',
-    '- В&nbsp;систему интегрированы сервисы для научных публикаций, такие как Crossref, ORCiD и&nbsp;DOAJ',
-    '- Система рекомендована Google Scholar для наилучшей индексации публикуемого контента',
+    'Бесплатная система с&nbsp;открытым кодом, свободно скачиваемая и&nbsp;устанавливаемая, дающая пользователю неограниченные возможности модификации внешнего вида и&nbsp;функционала',
+    'Гибкая система электронного документооборота, настраиваемая под особенности каждого журнала/издателя',
+    'Система приема статей от&nbsp;авторов онлайн, совмещенная с&nbsp;системой электронного документооборота редакции',
+    'Поддержка различных вариантов распространения журнала: открытый доступ, отсроченный открытый доступ и&nbsp;подписной режим с&nbsp;модулем управления подпиской',
+    'В&nbsp;систему интегрированы сервисы для научных публикаций, такие как Crossref, ORCiD и&nbsp;DOAJ',
+    'Система рекомендована Google Scholar для наилучшей индексации публикуемого контента',
 ]
 const text2 = [
     'Бесплатная система с&nbsp;открытым кодом, свободно скачиваемая и&nbsp;устанавливаемая, дающая пользователю неограниченные возможности модификации внешнего вида и&nbsp;функционала',
@@ -84,8 +84,8 @@ const examples = [
 
     <div class="container">
         <div class="space-y-10 md:space-y-0 md:grid grid-cols-2 gap-5 xl:gap-36">
-            <div class="space-y-3 lg:space-y-5 base-text max-w-lg">
-                <h1 class="heading">О платформе</h1>
+            <div class="space-y-3 lg:space-y-5 base-text md:max-w-lg">
+                <h2 class="heading">О платформе</h2>
                 <p>Мы&nbsp;создали для вас уникальную платформу, которая сочетает в&nbsp;себе лучшие международные практики, и&nbsp;отвечает всем требованиям индексирующих баз данных, поисковых систем и&nbsp;регуляторов в&nbsp;сфере.</p>
                 <p>Мы&nbsp;объединили международный опыт (исходный код OJS) и&nbsp;собственные разработки в&nbsp;сфере электронного документооборота, рецензирования, редактирования и&nbsp;публикации научного контента онлайн в&nbsp;инновационный продукт, доступный каждому научному журналу.</p>
             </div>
@@ -105,26 +105,29 @@ const examples = [
         </div>
     </div>
 
-    <div class="container">
-        <h2 class="font-semibold text-gray-500 text-lg sm:text-xl lg:text-2xl">Платформа</h2>
-        <h1 class="max-w-screen-sm lg:max-w-screen-lg mt-2 text-gray-800 font-semibold text-xl sm:text-2xl lg:text-4xl">Мы&nbsp;объединили исходный код Open Journal System и&nbsp;собственные разработки</h1>
+    <div class="container xl:-mt-20">
+        <h2 class="heading">Платформа</h2>
 
-        <div class="grid grid-cols-4 gap-x-16 mt-10">
+        <div class="grid grid-cols-4 gap-x-16 mt-5 md:mt-10">
 
-            <div class="hidden sticky w-56 z-10 bg-white top-32 col-span-1 place-self-start lg:flex items-center py-10 px-14 shadow-brand rounded-lg">
+            <div class="hidden sticky w-56 z-10 bg-white top-32 mb-16 col-span-1 place-self-start lg:flex items-center py-10 px-14 shadow-brand rounded-lg">
                 <img src="/assets/images/ojs.png" alt="">
             </div>
-            <div class="col-span-4 lg:col-span-3 space-y-10 max-w-screen-md">
+            <div class="col-span-4 lg:col-span-3 space-y-5 max-w-screen-md">
+                <h2 class="subheading">Мы&nbsp;объединили исходный код Open Journal System и&nbsp;собственные разработки</h2>
                 {text1.map((t) => (
-                    <p class="text-gray-800">{t}</p>
+                    <div class="flex space-x-2 items-start">
+                        <img class="w-4 stroke-inherit mt-1" src="/assets/icons/check.svg" alt="">
+                        <p class="text-gray-800">{t}</p>
+                    </div>
                 ))}
             </div>
 
             <div class="sticky hidden w-56 mt-10 top-[330px] col-span-1 place-self-start lg:flex items-center py-5 px-14 bg-eco-gray shadow-brand rounded-lg">
                 <img src="/assets/icons/eco-white.svg" alt="">
             </div>
-            <div class="col-span-4 lg:col-span-3 space-y-10 mt-10 max-w-screen-md">
-                <h1 class="heading tracking-wide">Наши нововведения специально для вас</h1>
+            <div class="col-span-4 lg:col-span-3 space-y-5 mt-10 max-w-screen-md">
+                <h1 class="subheading">Наши нововведения специально для вас</h1>
                 {text2.map((t) => (
                     <div class="flex space-x-2 items-start">
                         <img class="w-4 stroke-inherit mt-1" src="/assets/icons/check.svg" alt="">
@@ -135,13 +138,13 @@ const examples = [
         </div>
     </div>
 
-    <div class="container">
-        <h2 class="font-semibold text-gray-500 text-lg sm:text-xl lg:text-2xl">Варианты</h2>
-        <h1 class="max-w-screen-sm lg:max-w-screen-lg mt-2 text-gray-800 font-semibold text-xl sm:text-2xl lg:text-4xl">Варианты, которые максимально раскроют возможности для Вас</h1>
+    <div class="container xl:-mt-10">
+        <h2 class="heading">Варианты</h2>
+        <h1 class="subheading">Варианты, которые максимально раскроют возможности для Вас</h1>
 
-        <div class="flex flex-wrap gap-10 mt-10">
+        <div class="mt-10 gap-5 grid md:grid-cols-2 lg:grid-cols-3">
             {cards.map((card) => (
-                <div class="p-5 rounded-lg shadow-brand w-full sm:w-80">
+                <div class="p-5 rounded-lg shadow-brand w-full">
                     <h1 class="heading font-bold">{card.title}</h1>
                     <h1 class="mt-2 tracking-wider text-3xl lg:text-4xl font-bold">{card.price}</h1>
                     <p class="text-sm text-gray-600">{card.aboutPrice}</p>
@@ -160,12 +163,12 @@ const examples = [
         </div>
     </div>
 
-    <div class="container lg:-mt-20">
-        <h2 class="font-semibold text-gray-500 text-lg sm:text-xl lg:text-2xl">Примеры</h2>
+    <div class="container xl:-mt-20">
+        <h2 class="heading">Примеры</h2>
 
-        <div class="flex flex-wrap gap-10 mt-10">
+        <div class="mt-10 gap-5 flex flex-col items-center justify-center sm:grid md:grid-cols-2 lg:grid-cols-3">
             {examples.map((i) => (
-                <a href="/" class="flex space-x-3 w-80">
+                <a href="/" class="flex flex-col items-center gap-2 w-80">
                     <img class="w-32" src={i.img} alt="">
                     <p class="text-gray-500 font-medium">{i.text}</p>
                 </a>

@@ -8,6 +8,9 @@
     .heading {
         @apply text-2xl font-semibold lg:text-3xl text-black;
     }
+    .subheading {
+        @apply text-lg md:text-xl font-semibold;
+    }
     .base-text {
         @apply lg:text-lg font-light text-black;
     }

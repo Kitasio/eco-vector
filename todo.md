@@ -1,8 +1,6 @@
-1. Nav 
-    make all smaller like in ready pages, use their font sizes and container sizes
-
-2. Lang picker in the nav
-
-3. Image in nav on right (on xl screens)
-
-4. Footer make perfect
+1. Nav active links
+<!-- 2. journal releases sm: text full icons center -->
+<!-- 3. same page sm: image full and text full -->
+<!-- 4. IT-platform: sm: text full -->
+<!-- 5. h1 h2 h3 just figure it... -->
+<!-- 6. all checks not dashes -->

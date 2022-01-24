@@ -121,18 +121,18 @@ const services = [
 
     <div class="container">
         <div class="space-y-10 md:space-y-0 md:grid grid-cols-2 gap-5 xl:gap-28">
-            <div class="space-y-3 lg:space-y-5 base-text max-w-lg">
+            <div class="space-y-3 lg:space-y-5 base-text md:max-w-lg">
                 <h1 class="heading">О журналах</h1>
                 <p>Мы&nbsp;издаем как журналы с&nbsp;большой историей, так и&nbsp;молодые издания по&nbsp;новым направлениям науки и&nbsp;технологий, в&nbsp;числе которых медицина и&nbsp;здравоохранение, физико-математические науки, философия, экономика, юриспруденция, биологические науки, искусство и&nbsp;культура, педагогика, политика и&nbsp;др. Журналы успешны и&nbsp;востребованы не&nbsp;только в&nbsp;России, но&nbsp;и&nbsp;во&nbsp;всем мире, и&nbsp;продолжают завоевывать аудиторию читателей и&nbsp;авторов.</p>
                 <p>Эко-Вектор предоставляет услуги полного издательского цикла для печатных и&nbsp;электронных периодических изданий на&nbsp;русском и&nbsp;иностранных языках (в&nbsp;первую очередь&nbsp;&mdash; английском)&nbsp;&mdash; от&nbsp;создания концепции издания до&nbsp;распространения публикаций и&nbsp;выпусков.</p>
             </div>
-            <div class="font-bold md:pt-2 space-y-3 lg:space-y-5 md:pl-20 max-w-md">
+            <div class="font-bold md:pt-2 space-y-3 lg:space-y-5 md:pl-20 md:max-w-md">
                 <h1 class="text-lg opacity-60">ИНДЕКСАЦИЯ</h1>
                 
-                <div class="grid grid-cols-3 gap-7">
+                <div class="flex flex-wrap md:grid grid-cols-3 gap-7 mx-auto">
                     {images.map((img) => (
                         <a href="/">
-                            <img src={img} alt="">
+                            <img class="w-20 sm:w-32" src={img} alt="">
                         </a> 
                     ))}
                 </div>
@@ -146,8 +146,8 @@ const services = [
 
     <div class="container">
         <div class="space-y-5 md:space-y-0 sm:gap-5 justify-between md:flex lg:max-w-screen-lg xl:max-w-screen-xl">
-            <img class="rounded-lg max-w-sm object-cover w-full" src="/assets/images/journal-cover.jpg" alt="">
-            <div class="space-y-3 max-w-lg">
+            <img class="rounded-lg md:max-w-sm object-cover w-full" src="/assets/images/journal-cover.jpg" alt="">
+            <div class="space-y-3 md:max-w-lg">
                 <h1 class="heading">Хотите издать журнал?</h1>
                 <p class="base-text">Мы&nbsp;можем взять на&nbsp;себя все сложности, связанные с&nbsp;переходом в&nbsp;электронное пространство&nbsp;&mdash; от&nbsp;получения DOI и&nbsp;настройки архивов до&nbsp;регистрации издания в&nbsp;международных реферативных базах и&nbsp;автоматизации документооборота. Отправьте заявку на&nbsp;консультацию специалиста</p>
                 <a class="btn btn-outline text-eco-green hover:bg-eco-green hover:text-white border-eco-green border-2 hover:border-eco-green rounded" href="/">Издать журнал</a>
