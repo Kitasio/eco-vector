@@ -13,6 +13,9 @@ module.exports = {
                 'eco-yellow': '#EAAF47',
                 'eco-gray': '#4C7589',
                 'eco-purple': '#65499F',
+                'eco-brown': '#383838',
+                'eco-gold': '#efd688',
+                'eco-honey': '#FFCB05',
                 'carousel': '#EDEFFF',
             },
             boxShadow: {

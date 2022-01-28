@@ -1,0 +1,303 @@
+---
+import Nav from '../components/Nav.astro'
+import CourseCard from '../components/CourseCard.astro'
+import WebCard from '../components/WebCard.astro'
+import Footer from '../components/Footer.astro'
+
+const items1 = [
+    { img: '/assets/icons/ac-1.svg', title: 'Инструкции', sub: 'Для авторов читателей'},
+    { img: '/assets/icons/ac-2.svg', title: 'Онлайн', sub: 'в удобное время'},
+    { img: '/assets/icons/ac-3.svg', title: 'Статистика', sub: 'Альтметрика для статей'},
+    { img: '/assets/icons/ac-4.svg', title: 'Мультиформат', sub: 'Тексты статей во всех форматах'},
+]
+
+const text1 = [
+    'Бесплатная система с&nbsp;открытым кодом, свободно скачиваемая и&nbsp;устанавливаемая, дающая пользователю неограниченные возможности модификации внешнего вида и&nbsp;функционала',
+    'Гибкая система электронного документооборота, настраиваемая под особенности каждого журнала/издателя',
+    'Система приема статей от&nbsp;авторов онлайн, совмещенная с&nbsp;системой электронного документооборота редакции',
+    'Поддержка различных вариантов распространения журнала: открытый доступ, отсроченный открытый доступ и&nbsp;подписной режим с&nbsp;модулем управления подпиской',
+    'В&nbsp;систему интегрированы сервисы для научных публикаций, такие как Crossref, ORCiD и&nbsp;DOAJ',
+    'Система рекомендована Google Scholar для наилучшей индексации публикуемого контента',
+]
+const text2 = [
+    'Бесплатная система с&nbsp;открытым кодом, свободно скачиваемая и&nbsp;устанавливаемая, дающая пользователю неограниченные возможности модификации внешнего вида и&nbsp;функционала',
+    'Гибкая система электронного документооборота, настраиваемая под особенности каждого журнала/издателя',
+    'Система приема статей от&nbsp;авторов онлайн, совмещенная с&nbsp;системой электронного документооборота редакции',
+    'Поддержка различных вариантов распространения журнала: открытый доступ, отсроченный открытый доступ и&nbsp;подписной режим с&nbsp;модулем управления подпиской',
+    'В&nbsp;систему интегрированы сервисы для научных публикаций, такие как Crossref, ORCiD и&nbsp;DOAJ',
+    'Система рекомендована Google Scholar для наилучшей индексации публикуемого контента',
+]
+
+const cards = [
+    {title: 'JEC', price: '80 000 ₽', aboutPrice: 'Ежемесячный платеж за журнал', text: 'Размещение журнала на нашем портале', list: [
+        'Собственный или корпоративный домен',
+        'Индивидуальный дизайн и CSS-макет',
+        'Постатейный архив',
+        'Неограниченное серверное пространство',
+        'Ежедневное резервное копирование',
+        'Единая электронная редакция и база пользователей',
+        'Обучение коллектива редакции',
+    ]},
+    {title: 'BOX', price: '160 000 ₽', aboutPrice: 'Однократная оплата', text: 'Установка издательской платформы на собственный сервер Заказчика ', list: [
+        'Настройка сервера Заказчика',
+        'Домен Заказчика',
+        'Индивидуальный дизайн и CSS-макет',
+        'Открытый код для внесения любых изменений',
+        'Постатейный архив',
+        'Закрытая база пользователей',
+        'Обучение коллектива редакции',
+    ]},
+    {title: 'СОПРОВОЖДЕНИЕ', price: '9500 ₽ ', aboutPrice: 'Ежемесячный платеж за журнал', text: 'Абонентское обслуживание включает в себя: ', list: [
+        'Техническая поддержка 24/7',
+        'Постатейное размещение выпусков в PDF, HTML, XML',
+        'Индексация в базах данных (Crossref, РИНЦ, DOAJ, MEDLINE, EBSCO, SCOPUS, WoS, CNKI) ',
+        'Индивидуализация работы электронной редакции',
+        'Внесение любых изменений в сайт журнала',
+        'Аудит журнала, составление заявок на индексацию в базах данных',
+        'Регистрация DOI публикациям, доступ к издательским и редакционным сервисам.',
+    ]},
+]
+
+const examples = [
+    {img: '/assets/images/primer.jpg', text: 'Digital Diagnostics'},
+    {img: '/assets/images/primer2.jpg', text: 'Вестник Самарского университета'},
+    {img: '/assets/images/primer3.jpg', text: 'Терапевтический архив'},
+]
+
+const craftItems1 = [
+    {title: '8900 ученых', text: 'уже приняли участие'},
+    {title: '40 спикеров', text: 'постоянные участники Школ научного ремесла'},
+    {title: 'Аудитория ', text: 'Студенты, аспиранты, магистранты, профессорско-преподавательский состав высших учебных заведений.'},
+    {title: 'Формат', text: 'проведение Школы может быть любым: онлайн, офлайн, или гибридный онлайн+офлайн'},
+]
+const craftItems2 = [
+    {title: '10 школ', text: 'научного ремесла проведено в 5 регионах'},
+    {title: '5 дней', text: 'лекций и тренингов для полного погружения в научный мир'},
+    {title: 'Спикеры', text: 'Успешные ученые, специалисты научных и околонаучных организаций, представители крупнейших научных издательских домов мира.'},
+    {title: 'Сертификат', text: 'участника выдается по окончанию мероприятия каждому слушателю'},
+]
+const questions = [
+    {title: 'Уже давно публикуюсь. Что нового получу на курсах?', text: 'Полученные знания помогут Вам сократить время на подготовку и рецензирование статей, использовать современные базы данных и инструменты для исследований с максимальной пользой для себя, защитить права своей интеллектуальной собственности.'},
+    {title: 'Какие документы я получу по окончании прохождения курса?', text: 'По окончании курса Вы можете получить Удостоверение о повышении квалификации по государственному образцу и Сертификат слушателя, заверенный печатью Академии «Эко-Вектор», либо только Сертификат слушателя.'},
+    {title: 'Я смогу совмещать основную учебу/работу с занятиями на курсе?', text: 'Все занятия на курсах проходят в вечернее время, либо имеют видеозаписи лекций, которые можно просмотреть в удобное время.'},
+    {title: 'Что нужно для зачисления на курс?', text: 'Прежде всего необходимо заполнить форму заявки на сайте Академии и зарегистрироваться на курс. Если Вы идете на курс с получением Удостоверения о повышении квалификации, то требуется оконченное высшее образование и пакет документов (список документов указан на странице курса). Для занятий на курсе с итоговой выдачей Сертификата слушателя нужна только заявка и оплата обучения.'},
+    {title: 'Если я еще студент, полезны ли мне будут эти курсы?', text: 'Если Вы задумываетесь о научной деятельности или уже встали на путь ученого, наши курсы помогут избежать распространенных ошибок в самом начале научной карьеры, грамотно планировать свои исследования и успешно публиковаться в международных научных журналах, создавать свой бренд ученого и продвигать его.'},
+]
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+</head>
+<body>
+    <Nav client:visible />
+    <div class="xl:px-20">
+        <div class="bg-eco-brown w-full text-white flex flex-col items-center py-5 px-5 sm:flex-row max-w-screen-xl mx-auto xl:pl-24 xl:pr-10 sm:justify-between xl:rounded-b">
+            <div class="flex flex-col space-y-4 lg:space-y-5 sm:w-1/2">
+                <span class="text-3xl font-semibold lg:text-5xl">
+                    <div name="heading">Академия <br>«Эко-Вектор»</div>
+                </span>
+                <span class="font-extralight lg:text-xl lg:font-light lg:leading-relaxed">
+                    <div name="text">Все, что нужно знать о публикациях в научных журналах</div>
+                </span>
+                <div class="flex items-center mt-5">
+                    <a href="/book-releases" class="btn btn-outline text-white hover:bg-eco-brown hover:text-eco-gold border-white border-2 hover:border-eco-gold rounded">Подробнее</a>
+                </div>
+            </div>
+            <img src="/assets/images/academy.svg" alt="icon" class="hidden sm:inline-block w-48 md:w-60 lg:w-96">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="space-y-10 md:space-y-0 md:grid grid-cols-2 gap-5 xl:gap-36">
+            <div class="space-y-3 lg:space-y-5 base-text md:max-w-lg">
+                <h2 class="heading">Об Академии</h2>
+                <div class="whitespace-pre-line leading-5">Онлайн Академия «Эко-Вектор» создана для ученых, стремящихся развиваться и строить научную карьеру. Объединяет в себе тренинги, способствующие развитию навыков:
+
+- написания и публикации статей в российских и международных научных журналах,
+
+- работы с академическими текстами на английском языке,
+
+- применению статистических данных в публикациях,
+
+- ораторского мастерства,
+
+- продвижения в социальных сетях бренда своего имени, организации или журнала.
+
+Для помощи в продвижении современным ученым мы собрали в Академии успешных научных деятелей, специалистов и исследователей, которые делятся со слушателями своим многолетним опытом, помогают найти ответы на вопросы, сориентироваться в динамичном научном мире.
+
+Академия "Эко-Вектор" проводит консультационные семинары и тренинги с 2017 года, с 2020 года - в онлайн формате. 
+                </div>
+            </div>
+            <div class="md:pl-20 xl:pl-32">
+                <div class="grid grid-cols-2 gap-10 mt-14">
+                    {items1.map((item) => (
+                        <a href="/">
+                            <div class="flex flex-col items-center">
+                                <img src={item.img} alt="">
+                                <div class="font-semibold text-center mt-1">{item.title}</div>
+                                <p class="text-center font-normal">{item.sub}</p>
+                            </div>
+                        </a> 
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container xl:-mt-20">
+        <div class="flex space-y-2 flex-col md:flex-row md:justify-between md:items-center md:px-0">
+            <h1 class="heading">Курсы</h1>
+            <a class="flex space-x-5 md:space-x-10 items-center md:mt-2 group" href="/">
+                <p class="whitespace-nowrap text-eco-brown group-hover:opacity-80 transition font-semibold uppercase">Все курсы</p>
+                <img src="/assets/arrow-brown.svg" alt="" class="group-hover:scale-105 transition duration-200" />
+            </a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 mt-5 gap-5 md:gap-7">
+            <CourseCard type={"сертификат"} text={"Публикации <br>в международных <br>научных журналах"} hours={"16 академических часов"} price={"10 000 ₽"} />
+            <CourseCard type={"УДОСТОВЕРЕНИЕ ГОС.ОБРАЗЦА"} text={"Публикации <br>в международных научных журналах, интеллектуальное право"} hours={"20 академических часов"} price={"17 490 ₽"} />
+            <CourseCard type={"сертификат"} text={"Основы академического письма (на английском языке)"} hours={"16 академических часов"} price={"10 000 ₽"} />
+            <CourseCard type={"сертификат"} text={"Статистика в научной публикации"} hours={"16 академических часов"} price={"8 000 ₽"} />
+            <CourseCard type={"сертификат"} text={"Школа научного редактора"} hours={"16 академических часов"} price={"10 000 ₽"} />
+            <CourseCard type={"сертификат"} text={"Школа научного редактора, интеллектуальная собственность "} hours={"20 академических часов"} price={"17 490 ₽"} />
+            <CourseCard type={"сертификат"} text={"Запуск и ведение соцсетей для ученого, журнала или научной организации"} hours={"9 академических часов"} price={"5 740 ₽"} />
+            <CourseCard type={"сертификат"} text={"Объясняя свою работу: научные коммуникации, презентация, постер"} hours={"5 академических часов"} price={"4 000 ₽"} />
+            <CourseCard type={"сертификат"} text={"Искусство публичных выступлений для ученого "} hours={"3 академических часов"} price={"4 990 ₽"} />
+        </div>
+
+        <div class="w-full h-0.5 bg-black mt-20"></div>
+    </div>
+
+    <div class="container xl:-mt-20">
+        <div class="flex space-y-2 flex-col md:flex-row md:justify-between md:items-center md:px-0">
+            <h1 class="heading">Бесплатные вебинары</h1>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 mt-5 gap-5 md:gap-7">
+            <WebCard type={"сертификат"} text={"Персональный бренд ученого: концепция, цели, развитие"} />
+            <WebCard type={"сертификат"} text={"Публикации <br>в международных <br>научных журналах"} />
+            <WebCard type={"сертификат"} text={"Зачем молодому ученому статистика"} />
+            <WebCard type={"сертификат"} text={"Как создать идеальный научный текст на английском языке с помощью инструментов Writefull"} />
+            <WebCard type={"сертификат"} text={"Кокрейновская библиотека"} />
+            <WebCard type={"сертификат"} text={"Доказательная медицина <br>и Большие Данные на примере Covid-19"} />
+        </div>
+    </div>
+
+    <div class="bg-eco-brown">
+        <div class="container">
+            <div class="sm:flex justify-between">
+                <div class="text-white max-w-md">
+                    <div class="space-y-7">
+                        <h1 class="text-3xl lg:text-5xl font-medium">SciCraft: Школа <br>научного ремесла</h1>
+                        <p class="text-lg lg:text-2xl font-light">Крупномасштабное мероприятие для молодых ученых, которое разработано и реализуется компанией «Эко-Вектор».</p>
+                    </div>
+
+                    <div class="flex items-center space-x-10 mt-3">
+                        <div class="flex items-center mt-5">
+                            <a href="/book-releases" class="btn btn-outline text-white hover:bg-eco-brown hover:text-eco-gold border-white border-2 hover:border-eco-gold rounded">Подробнее</a>
+                        </div>
+                        <div class="flex items-center mt-5">
+                            <a href="/" class="text-sm sm:text-base text-eco-honey font-medium hover:underline decoration-2 underline-offset-4">АРХИВ МЕРОПРИЯТИЙ</a>
+                        </div>
+                    </div>
+                </div>
+                <img class="rounded-md hidden sm:inline w-64 object-cover md:w-80 lg:w-auto" src="/assets/images/scicraft.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <h1 class="text-6xl sm:text-9xl lg:text-[17rem] xl:text-[18rem] tracking-wide opacity-80 font-medium">SciCraft</h1>
+            <div class="mt-5 md:mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="gap-5 grid md:col-span-1">
+                    <div>
+                        <div class="sticky top-28 space-y-5">
+                            <div class="bg-[#5d6698] text-white p-7 rounded-md">
+                                <h1 class="font-medium text-xl">Цели</h1>
+                                <p class="whitespace-pre-line font-light text-lg">
+                                    -Поддержка развития науки в России;
+
+                                    -Стимулирование интереса студентов к науке;
+
+                                    -Помощь в развитии молодым ученым;
+
+                                    -Помощь в использовании электронных сервисов для исследований 
+                                </p>
+                            </div>
+                            <div class="bg-eco-brown text-white p-7 rounded-md">
+                                <p class="whitespace-pre-line font-semibold">SciCraft проводится по заказу региона, области или высшего учебного заведения.</p>
+                                <div class="flex items-center mt-5">
+                                    <a href="/book-releases" class="btn btn-outline text-white hover:bg-eco-brown hover:text-eco-gold border-white border-2 hover:border-eco-gold rounded">заказать</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-1 lg:col-span-2 grid lg:grid-cols-2 mt-5 md:mt-0 gap-5 md:gap-10">
+                    <div class="space-y-5 md:space-y-10 lg:space-y-14">
+                        {craftItems1.map((i) => (
+                            <div>
+                                <h1 class="font-bold text-2xl md:text-4xl md:font-bold">{i.title}</h1>
+                                <p class="text-lg opacity-80 font-light">{i.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div class="space-y-5 md:space-y-10 lg:space-y-14">
+                        {craftItems2.map((i) => (
+                            <div>
+                                <h1 class="font-bold text-2xl md:text-4xl md:font-bold">{i.title}</h1>
+                                <p class="text-lg opacity-80 font-light">{i.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-eco-brown">
+        <div class="container">
+            <div class="flex flex-col md:flex-row gap-5 justify-between md:items-center">
+                <h1 class="heading text-white">Есть вопрос? Закажите консультацию</h1>
+                <div class="flex items-start">
+                    <a href="/book-releases" class="btn btn-outline text-white hover:bg-eco-brown hover:text-eco-gold border-white border-2 hover:border-eco-gold rounded">заказать</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="heading">Часто задаваемые вопросы</h1>
+
+        <div class="mt-5 space-y-5">
+            {questions.map((i) => (
+                <div class="collapse w-full rounded shadow-brand p-5">
+                    <input type="checkbox">
+                    <div class="collapse-title bg-white px-0 text-xl font-medium flex gap-3 justify-between items-center cursor-pointer">
+                        <h1 class="text-black">{i.title}</h1>
+                        <div class="w-5 min-w-max">
+                            <img class="text-black w-5 h-5" src="/assets/icons/chevron-down.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="collapse-content px-0">
+                        <div class="pt-1 border-t-2">
+                            <p class="whitespace-pre-line small-text">
+                                {i.text}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+
+
+    <div class="w-full bg-[#1B1B1D] text-white">
+        <Footer client:visible />
+    </div>
+</body>
+</html>
