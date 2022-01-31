@@ -66,14 +66,12 @@ const examples = [
 
 const craftItems1 = [
     {title: '8900 ученых', text: 'уже приняли участие'},
-    {title: '40 спикеров', text: 'постоянные участники Школ научного ремесла'},
-    {title: 'Аудитория ', text: 'Студенты, аспиранты, магистранты, профессорско-преподавательский состав высших учебных заведений.'},
-    {title: 'Формат', text: 'проведение Школы может быть любым: онлайн, офлайн, или гибридный онлайн+офлайн'},
-]
-const craftItems2 = [
     {title: '10 школ', text: 'научного ремесла проведено в 5 регионах'},
+    {title: '40 спикеров', text: 'постоянные участники Школ научного ремесла'},
     {title: '5 дней', text: 'лекций и тренингов для полного погружения в научный мир'},
+    {title: 'Аудитория ', text: 'Студенты, аспиранты, магистранты, профессорско-преподавательский состав высших учебных заведений.'},
     {title: 'Спикеры', text: 'Успешные ученые, специалисты научных и околонаучных организаций, представители крупнейших научных издательских домов мира.'},
+    {title: 'Формат', text: 'проведение Школы может быть любым: онлайн, офлайн, или гибридный онлайн+офлайн'},
     {title: 'Сертификат', text: 'участника выдается по окончанию мероприятия каждому слушателю'},
 ]
 const questions = [
@@ -111,8 +109,8 @@ const questions = [
     </div>
 
     <div class="container">
-        <div class="space-y-10 md:space-y-0 md:grid grid-cols-2 gap-5 xl:gap-36">
-            <div class="space-y-3 lg:space-y-5 base-text md:max-w-lg">
+        <div class="space-y-10 md:space-y-0 md:grid grid-cols-2 gap-5 xl:gap-10">
+            <div class="space-y-3 lg:space-y-5 base-text md:max-w-lg lg:max-w-4xl">
                 <h2 class="heading">Об Академии</h2>
                 <div class="whitespace-pre-line leading-5">Онлайн Академия «Эко-Вектор» создана для ученых, стремящихся развиваться и строить научную карьеру. Объединяет в себе тренинги, способствующие развитию навыков:
 
@@ -131,7 +129,7 @@ const questions = [
 Академия "Эко-Вектор" проводит консультационные семинары и тренинги с 2017 года, с 2020 года - в онлайн формате. 
                 </div>
             </div>
-            <div class="md:pl-20 xl:pl-32">
+            <div class="md:pl-20 xl:pl-24">
                 <div class="grid grid-cols-2 gap-10 mt-14">
                     {items1.map((item) => (
                         <a href="/">
@@ -218,41 +216,30 @@ const questions = [
                         <div class="sticky top-28 space-y-5">
                             <div class="bg-[#5d6698] text-white p-7 rounded-md">
                                 <h1 class="font-medium text-xl">Цели</h1>
-                                <p class="whitespace-pre-line font-light text-lg">
-                                    -Поддержка развития науки в России;
-
-                                    -Стимулирование интереса студентов к науке;
-
-                                    -Помощь в развитии молодым ученым;
-
-                                    -Помощь в использовании электронных сервисов для исследований 
-                                </p>
+                                <ul class="font-light text-lg space-y-5 mt-5">
+                                    <li>-Поддержка развития науки в России;</li>
+                                    <li>-Стимулирование интереса студентов к науке;</li>
+                                    <li>-Помощь в развитии молодым ученым;</li>
+                                    <li>-Помощь в использовании электронных сервисов для исследований</li>
+                                </ul>
                             </div>
                             <div class="bg-eco-brown text-white p-7 rounded-md">
                                 <p class="whitespace-pre-line font-semibold">SciCraft проводится по заказу региона, области или высшего учебного заведения.</p>
-                                <div class="flex items-center mt-5">
+                                <div class="flex items-center justify-center md:justify-start mt-5">
                                     <a href="/book-releases" class="btn btn-outline text-white hover:bg-eco-brown hover:text-eco-gold border-white border-2 hover:border-eco-gold rounded">заказать</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:col-span-1 lg:col-span-2 grid lg:grid-cols-2 mt-5 md:mt-0 gap-5 md:gap-10">
-                    <div class="space-y-5 md:space-y-10 lg:space-y-14">
-                        {craftItems1.map((i) => (
-                            <div>
-                                <h1 class="font-bold text-2xl md:text-4xl md:font-bold">{i.title}</h1>
-                                <p class="text-lg opacity-80 font-light">{i.text}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div class="space-y-5 md:space-y-10 lg:space-y-14">
-                        {craftItems2.map((i) => (
-                            <div>
-                                <h1 class="font-bold text-2xl md:text-4xl md:font-bold">{i.title}</h1>
-                                <p class="text-lg opacity-80 font-light">{i.text}</p>
-                            </div>
-                        ))}
+                <div class="md:col-span-1 lg:col-span-2">
+                    <div class="grid lg:grid-cols-2 mt-5 md:mt-0 gap-5 md:gap-10">
+                            {craftItems1.map((i) => (
+                                <div>
+                                    <h1 class="font-bold text-2xl md:text-4xl md:font-bold">{i.title}</h1>
+                                    <p class="text-lg opacity-80 font-light">{i.text}</p>
+                                </div>
+                            ))}
                     </div>
                 </div>
             </div>
@@ -263,7 +250,7 @@ const questions = [
         <div class="container">
             <div class="flex flex-col md:flex-row gap-5 justify-between md:items-center">
                 <h1 class="heading text-white">Есть вопрос? Закажите консультацию</h1>
-                <div class="flex items-start">
+                <div class="flex items-start justify-center md:justify-start">
                     <a href="/book-releases" class="btn btn-outline text-white hover:bg-eco-brown hover:text-eco-gold border-white border-2 hover:border-eco-gold rounded">заказать</a>
                 </div>
             </div>

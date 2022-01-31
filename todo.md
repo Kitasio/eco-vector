@@ -1,6 +1,6 @@
-1. Nav active links
-<!-- 2. journal releases sm: text full icons center -->
-<!-- 3. same page sm: image full and text full -->
-<!-- 4. IT-platform: sm: text full -->
-<!-- 5. h1 h2 h3 just figure it... -->
-<!-- 6. all checks not dashes -->
+<!-- 1. Nav active links -->
+<!-- 2. text wider closer to icons on lg and onwards -->
+<!-- 3. grid text same line -->
+<!-- 4. ul in the cards -->
+<!-- 5. zakazat on center mobile -->
+<!-- 6. cards -->
