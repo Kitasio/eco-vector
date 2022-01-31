@@ -1,0 +1,51 @@
+---
+import Nav from '../components/Nav.astro'
+import Card from '../components/Card.astro'
+import Footer from '../components/Footer.astro'
+
+const items = [
+    {img: '/assets/resourses/1.png', title: 'Bentham Science', links: ['Bentham Science journal', 'Bentham Science journal', 'Bentham Science journal', 'Bentham Science journal', 'gagvasdgsad']},
+]
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+</head>
+<body>
+    <Nav client:visible />
+    <div class="xl:px-20">
+        <Card 
+            client:load 
+            color={"eco-yellow"} 
+            imgPath={"/assets/images/resourses.svg"} 
+            btnText={"Подробнее"}
+            heading={"Электронные ресурсы "} text={"На этой странице Вы найдете краткое описание всех онлайн-ресурсов, которыми мы занимаемся."} 
+        />
+    </div>
+
+    <div class="container">
+        {items.map((i) => (
+            <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div class="p-7 shadow-brand flex items-center justify-center aspect-square">
+                    <img class="w-2/3" src={i.img} alt="">
+                </div>
+                <h1 class="heading place-self-center">{i.title}</h1>
+            </div>
+
+            <div class="grid mt-5 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {i.links.map((i) => (
+                    <a class="md:flex shadow-brand p-3 text-gray-600 text-lg hover:text-gray-900" href="/">{i}</a>
+                ))}
+            </div>
+        ))}
+    </div>
+
+    <div class="w-full bg-[#1B1B1D] text-white">
+        <Footer client:visible />
+    </div>
+</body>
+</html>
