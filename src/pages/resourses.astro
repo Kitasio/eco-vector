@@ -4,7 +4,9 @@ import Card from '../components/Card.astro'
 import Footer from '../components/Footer.astro'
 
 const items = [
-    {img: '/assets/resourses/1.png', title: 'Bentham Science', links: ['Bentham Science journal', 'Bentham Science journal', 'Bentham Science journal', 'Bentham Science journal', 'gagvasdgsad']},
+    {img: '/assets/resourses/1.png', title: 'Bentham Science', links: ['Bentham Science journal']},
+    {img: '/assets/resourses/2.png', title: 'Brill', links: ['Brill Journals']},
+    {img: '/assets/resourses/3.png', title: 'Elsevier', links: ['ClinikalKey', 'Embase', 'Mendeley', 'Reaxys', 'Scopus', 'ScienceDirect']},
 ]
 ---
 
@@ -27,19 +29,33 @@ const items = [
         />
     </div>
 
-    <div class="container">
+    <div class="container space-y-16">
         {items.map((i) => (
-            <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                <div class="p-7 shadow-brand flex items-center justify-center aspect-square">
-                    <img class="w-2/3" src={i.img} alt="">
-                </div>
-                <h1 class="heading place-self-center">{i.title}</h1>
-            </div>
+            <div>
+                <label for={i.title}>
+                    <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        <div class="p-7 shadow-brand flex items-center justify-center aspect-square">
+                            <img class="w-2/3" src={i.img} alt="">
+                        </div>
+                        <h1 class="heading place-self-center justify-self-start">{i.title}</h1>
+                    </div>
 
-            <div class="grid mt-5 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {i.links.map((i) => (
-                    <a class="md:flex shadow-brand p-3 text-gray-600 text-lg hover:text-gray-900" href="/">{i}</a>
-                ))}
+                    <div class="grid mt-5 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        {i.links.map((i) => (
+                            <a class="md:flex shadow-brand p-3 text-gray-600 text-lg hover:text-gray-900" href="/">{i}</a>
+                        ))}
+                    </div>
+                </label>
+                <input type="checkbox" id={i.title} class="modal-toggle"> 
+                <div class="modal">
+                    <div class="modal-box">
+                        <p>Modal for {i.title}</p> 
+                        <div class="modal-action">
+                            <label for={i.title} class="btn btn-primary">Accept</label> 
+                            <label for={i.title} class="btn">Close</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         ))}
     </div>
