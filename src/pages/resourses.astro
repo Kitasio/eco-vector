@@ -4,7 +4,36 @@ import Card from '../components/Card.astro'
 import Footer from '../components/Footer.astro'
 
 const items = [
-    {img: '/assets/resourses/1.png', title: 'Bentham Science', links: ['Bentham Science journal']},
+    {img: '/assets/resourses/1.png', title: 'Bentham Science', links: ['Bentham Science journal'], html: `
+        <strong>Bentham Science - издания по актуальным вопросам медицины, фармакологии, нанотехнологии, биотехнологии, биоинформатики и химии;</strong>
+        <p>Электронные журналы издательства <a href="/">Bentham Science Publishing</a> – это издания по актуальным вопросам медицины, фармакологии, нанотехнологии, биотехнологии, биоинформатики и химии. </p>
+        <h2>Многие журналы имеют высокий импакт-фактор:</h2>
+        <ul>
+            <li>Recent Patents On Anti-Cancer Research — 4.295;</li>
+            <li>Current Alzheimer Research — 3.889;</li>
+            <li>Current Medicinal Chemistry — 3.853;</li>
+            <li>Current Cancer Drug Targets — 3.522;</li>
+            <li>Current Molecular Medicine — 3.621;</li>
+            <li>Current Pharmaceutical Design — 3.452;</li>
+            <li>Current Topics in Medicinal Chemistry — 3.402;</li>
+            <li>Current Drug Targets — 3.021;</li>
+            <li>Current Drug Metabolism — 2.976;</li>
+            <li>Mini Reviews Medicinal Chemistry — 2.90.</li>
+        </ul>
+        <h2>Охват и материалы базы:</h2>
+        <ul>
+            <li>140 рецензируемых журналов;</li>
+            <li>8 специальностей;</li>
+            <li>Электронные книги — 800;</li>
+            <li>Видео книги.</li>
+        </ul>
+        <h2>Полезные материалы:</h2>
+        <ul>
+            <li><a href="/">Каталог журналов 2019</a></li>
+            <li><a href="/">Новые наименования</a></li>
+            <li><a href="/">Запрос бесплатных тестовых доступов к журналам</a></li>
+        </ul>
+    `},
     {img: '/assets/resourses/2.png', title: 'Brill', links: ['Brill Journals']},
     {img: '/assets/resourses/3.png', title: 'Elsevier', links: ['ClinikalKey', 'Embase', 'Mendeley', 'Reaxys', 'Scopus', 'ScienceDirect']},
 ]
@@ -32,7 +61,7 @@ const items = [
     <div class="container space-y-16">
         {items.map((i) => (
             <div>
-                <label for={i.title}>
+                <label for={i.title} class="cursor-pointer">
                     <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                         <div class="p-7 shadow-brand flex items-center justify-center aspect-square">
                             <img class="w-2/3" src={i.img} alt="">
@@ -48,11 +77,19 @@ const items = [
                 </label>
                 <input type="checkbox" id={i.title} class="modal-toggle"> 
                 <div class="modal">
-                    <div class="modal-box">
-                        <p>Modal for {i.title}</p> 
-                        <div class="modal-action">
-                            <label for={i.title} class="btn btn-primary">Accept</label> 
-                            <label for={i.title} class="btn">Close</label>
+                    <div class="w-full flex justify-center items-center">
+                        <div class="bg-white rounded-xl sm:rounded p-5 lg:p-8 w-full md:w-10/12 lg:w-2/3 sm:mx-5 overflow-scroll">
+                            <div class="flex items-start justify-between border-b border-gray-300 pb-5">
+                                <img class="w-32" src={i.img} alt="">
+                                <label class="cursor-pointer" for={i.title}>
+                                    <img class="w-7 h-7" src="/assets/icons/x.svg" alt="close">
+                                </label>  
+                            </div>
+                            <div class="max-h-[70vh] w-full overflow-scroll pt-5">
+                                <div class="prose max-w-none prose-headings:mt-5 prose-p:my-0 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-500 hover:prose-a:underline">
+                                    {i.html}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
