@@ -18,9 +18,9 @@ const { items = [] } = Astro.props;
                 </div>
                 <div class="collapse-content px-0">
                     <div class="pt-1 border-t-2">
-                        <p class="whitespace-pre-line small-text">
+                        <div class="mt-3 prose max-w-none prose-headings:mt-5 prose-p:my-0 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-500 hover:prose-a:underline">
                             {i.text}
-                        </p>
+                        </div>
                         <a
                             href={i.link}
                             class="mt-3 btn btn-outline border-2 rounded border-eco-blue text-eco-blue hover:text-white hover:bg-eco-blue hover:border-eco-blue xl:btn-lg"
@@ -46,9 +46,9 @@ const { items = [] } = Astro.props;
                         class="w-full service hidden"
                     >
                         <h1 class="text-xl font-medium">{i.title}</h1>
-                        <p class="whitespace-pre-line small-text">
+                        <div class="mt-3 prose max-w-none prose-headings:mt-5 prose-p:my-0 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-500 hover:prose-a:underline">
                             {i.text}
-                        </p>
+                        </div>
                         <a
                             href={i.link}
                             class="btn btn-outline mt-4 border-2 rounded border-eco-blue text-eco-blue hover:text-white hover:bg-eco-blue hover:border-eco-blue">Заказать</a>
