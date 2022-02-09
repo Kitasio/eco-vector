@@ -19,15 +19,7 @@ const items2 = [
     {img: '/assets/partners/6.png', title: 'ENAGO', html: `ENAGO  – Сервис академического редактирования и научного перевода для исследователей, которые хотят публиковаться в международных журналах с высоким импакт-фактором. `},
     {img: '/assets/partners/7.png', title: 'WriteFull', html: `Пакет программных инструментов компании Thinqlab LTD разработанный для студентов и исследователей для уверенного написания академических текстов на английском языке`},
 ]
-const items3 = [
-    {img: '/assets/partners/1.png', title: 'The Society of Petroleum Engineers',
-        html: `
-                <p>The Society of Petroleum Engineers (SPE) Общество инженеров-нефтяников  -некоммерческая организация миссия которой заключается в сборе, распространении и обмене техническими знаниями, касающимися разведки, разработки и добычи нефтяных и газовых ресурсов и связанных с ними технологий, и в предоставлении возможностей специалистам нефтяного машиностроения повысить свою техническую и профессиональную компетентность.</p>
-    `},
-    {img: '/assets/partners/2.png', title: 'JovE', html: `JovE – Первый в мире рецензируемый видеожурнал и образовательная видеоплатформа для ученых.`},
-    {img: '/assets/partners/3.png', title: 'Clarivate Analytics', html: `<p> Clarivate Analytics – независимая американская компания, управляющая базами данных, информационными системами и коллекциями по интеллектуальной собственности. Компания ориентирована на проведение научных и академических исследований, патентный анализ и правовое регулирование, фармацевтические и биотехнологические исследования, охрану товарных знаков, защиту брендов и интеллектуальной собственности. Эко-Вектор является официальным представителем продукции Wiley в России и оператором национальной подписки.</p>`},
-    {img: '/assets/partners/4.png', title: 'John Wiley & Sons', html: `<p>John Wiley & Sons  -  международное издательство, которое специализируется на выпуске академических изданий. John Wiley & Sons выпускает издания для профессионалов, студентов и преподавателей высшей школы, исследователей, учёных, медиков. Эко-Вектор является официальным представителем продукции Wiley в России и оператором национальной подписки.</p>`},
-]
+
 ---
 
 <html lang="en">
@@ -51,12 +43,12 @@ const items3 = [
 
     <div class="container space-y-10">
         <h1 class="heading">Издательства и агрегаторы</h1>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-20">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
             {items.map((i) => (
                 <div>
                     <label for={i.title} class="cursor-pointer">
                         <div class="space-y-3">
-                            <div class="p-7 shadow-brand flex items-center justify-center aspect-video">
+                            <div class="p-7 shadow-brand flex items-center justify-center h-48 sm:h-auto sm:aspect-video">
                                 <img class="w-1/2" src={i.img} alt="">
                             </div>
                             <h1 class="text-center subheading place-self-center justify-self-start">{i.title}</h1>
@@ -89,12 +81,12 @@ const items3 = [
     </div>
     <div class="container space-y-10">
         <h1 class="heading">Профессиональные ассоциации</h1>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-20">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
             {items2.map((i) => (
                 <div>
                     <label for={i.title} class="cursor-pointer">
                         <div class="space-y-3">
-                            <div class="p-7 shadow-brand flex items-center justify-center aspect-video">
+                            <div class="p-7 shadow-brand flex items-center justify-center h-48 sm:h-auto sm:aspect-video">
                                 <img class="w-1/2" src={i.img} alt="">
                             </div>
                             <h1 class="text-center subheading place-self-center justify-self-start">{i.title}</h1>
