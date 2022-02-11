@@ -12,18 +12,20 @@ const {name, img, text} = Astro.props;
         </div>
         <h1 class="text-xl font-bold">{name}</h1>
     </div>
-    <p class="small-text md:hidden mt-3">{text}</p>
+    <div class="small-text md:hidden mt-3 prose max-w-none prose-headings:mt-5 prose-p:my-0 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-500 hover:prose-a:underline">
+        {text}
+    </div>
 
     <!-- DESKTOP -->
     <div class="md:flex items-center space-x-3 lg:space-x-5 hidden">
-        <div class="avatar">
+        <div class="avatar self-start">
             <div class="rounded-full w-24 h-24">
                 <img src={img} alt="avatar" />
             </div>
         </div>
         <div>
             <h1 class="text-xl font-bold">{name}</h1>
-            <p class="small-text">{text}</p>
+            <div class="small-text prose max-w-none prose-headings:mt-5 prose-p:my-0 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-500 hover:prose-a:underline">{text}</div>
         </div>
     </div>
 </div>

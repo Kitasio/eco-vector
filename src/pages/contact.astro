@@ -1,0 +1,141 @@
+---
+import Nav from '../components/Nav.astro'
+import Person from '../components/Person.astro'
+import Footer from '../components/Footer.astro'
+
+const people = [
+    { name: 'Игорь Геннадьевич Родин', img: '/assets/people/1.png', text: `
+        <p style="margin-top: 5px;">Президент компании</p>
+        <div class="flex flex-col sm:flex-row">
+            <a style="margin-right: 10px;" href="mailto:info@eco-vector.com">info@eco-vector.com</a> <a href="tel:+7 (812) 312-45-72">+7 (812) 312-45-72</a>
+        </div>
+    `},
+    { name: 'Евгений Валентинович Щепин', img: '/assets/people/2.png', text: `
+        <p style="margin-top: 5px;">Генеральный директора</p>
+        <div class="flex flex-col sm:flex-row">
+            <a style="margin-right: 10px;" href="mailto:e.schepin@eco-vector.com">e.schepin@eco-vector.com</a>
+        </div>
+
+        <br>
+        <p>Обращаться по вопросам правового обеспечения деятельности компании.</p>
+    `},
+    { name: 'Павел Анатольевич Наумов', img: '/assets/people/3.png', text: `
+        <p style="margin-top: 5px;">Заместитель генерального директора </p>
+        <div class="flex flex-col sm:flex-row">
+            <a style="margin-right: 10px;" href="mailto:p.naumov@eco-vector.com">p.naumov@eco-vector.com</a>
+            <a href="">+7 (812) 648 83 68</a>
+        </div>
+        <br>
+        <p>Обращаться по вопросам:</p>
+        <ul>
+            <li>представление интересов Общества, заключение сделок, а также участие в торгах, аукционах от его имени.</li>
+        </ul>
+    `},
+    { name: 'Светлана Ивановна Рязанцева ', img: '/assets/people/4.png', text: `
+        <p style="margin-top: 5px;">Заместитель генерального директора </p>
+        <div class="flex flex-col sm:flex-row">
+            <a style="margin-right: 10px;" href="mailto:s.ryazanseva@eco-vector.com">s.ryazanseva@eco-vector.com</a>
+            <a href="">+7 (812) 648 83 68</a>
+        </div>
+
+        <br>
+        <p>Обращаться по вопросам:</p>
+        <ul>
+            <li>регистрация и перерегистрация СМИ в Роскомнадзоре;</li>
+            <li>размещение рекламной информации в книгах, пособиях и журналах;</li>
+            <li>по вопросам и условиям издания книг, пособий, репринтов; </li>
+            <li>оптовая и розничная продажа книг.</li>
+        </ul>
+    `},
+]
+---
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+</head>
+<body>
+    <Nav client:visible />
+    <div class="bg-eco-blue w-full text-white flex flex-col items-center py-5 px-5 sm:flex-row max-w-screen-xl mx-auto xl:pl-24 xl:pr-10 sm:justify-between xl:rounded-b">
+        <div class="flex flex-col space-y-4 lg:space-y-5 sm:w-1/2">
+            <span class="text-3xl font-semibold lg:text-5xl">
+                <div name="heading">Контакты</div>
+            </span>
+            <span class="font-extralight lg:text-xl lg:font-light lg:leading-relaxed">
+                <div name="text">Издательство ООО «Эко-Вектор» по данным на начало 2021 года выпускает около 100 научно-практических журналов по различным направлениям</div>
+            </span>
+            <div class="flex items-center mt-5 space-x-16">
+                <a href="/">
+                    <img src="/assets/icons/fb.svg" alt="">
+                </a>
+                <a href="/">
+                    <img src="/assets/icons/inst.png" alt="">
+                </a>
+                <a href="/">
+                    <img src="/assets/icons/vk.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <img src="/assets/images/contact.svg" alt="icon" class="hidden sm:inline-block w-48 md:w-60 lg:w-96">
+    </div>
+
+    <div class="container">
+        <div class="mt-10 space-y-5">
+            {people.map((i) => (
+                <div>
+                    <Person name={i.name} img={i.img} text={i.text} client:visible />
+                </div>
+            ))}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="space-y-16 md:flex md:justify-between md:space-y-0">
+            <div class="md:w-5/12">
+                <h1 class="heading mb-1">Санкт-Петербург</h1>
+                <p class="small-text mb-3">Центральный офис</p>
+                <div class="overflow-hidden rounded-md">
+                    <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт‑Петербург</a><a href="https://yandex.ru/maps/2/saint-petersburg/house/aptekarskiy_pereulok_4/Z0kYdQVoS0UFQFtjfXV1c3RnbQ==/?ll=30.328202%2C59.942850&utm_medium=mapframe&utm_source=maps&z=16.9" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аптекарский переулок, 4 — Яндекс.Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUYfXvL0B" width="600" height="242" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
+                </div>
+                <div class="mt-7 space-y-7">
+                    <div>
+                        <h2 class="text-lg text-zinc-500 font-semibold mb-1">АДРЕС</h2>
+                        <p class="">191186, Санкт-Петербург,<br> Аптекарский пер. д.3 </p>
+                    </div>
+                    <div>
+                        <h2 class="text-lg text-zinc-500 font-semibold mb-1">КОНТАКТЫ</h2>
+                        <div>Тел: <a class="text-blue-600 hover:underline hover:text-blue-500" href="">+7 (812) 648-83-66</a></div>
+                        <div>Email: <a class="text-blue-600 hover:underline hover:text-blue-500" href="">info@eco-vector.com</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-5/12">
+                <h1 class="heading mb-1">Москва</h1>
+                <p class="small-text mb-3">Филиал</p>
+                <div class="overflow-hidden rounded-md">
+                    <a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/shenkurskiy_proyezd_3b/Z04Ycw5gSUICQFtvfXR4cHhhYg==/?ll=37.590075%2C55.891426&utm_medium=mapframe&utm_source=maps&z=16.9" style="color:#eee;font-size:12px;position:absolute;top:14px;">Шенкурский проезд, 3Б — Яндекс.Карты</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUYfXwlCC" width="600" height="242" frameborder="0" allowfullscreen="true" style="position:relative;"></iframe>
+                </div>
+                <div class="mt-7 space-y-7">
+                    <div>
+                        <h2 class="text-lg text-zinc-500 font-semibold mb-1">АДРЕС</h2>
+                        <p class="">127349, Москва<br>Шенкурский проезд 3Б, офис 311.</p>
+                    </div>
+                    <div>
+                        <h2 class="text-lg text-zinc-500 font-semibold mb-1">КОНТАКТЫ</h2>
+                        <div>Тел: <a class="text-blue-600 hover:underline hover:text-blue-500" href="">+7 (495) 409-83-09</a></div>
+                        <div>Email: <a class="text-blue-600 hover:underline hover:text-blue-500" href="">infomos@eco-vector.com</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="w-full bg-[#1B1B1D] text-white">
+        <Footer client:visible />
+    </div>
+</body>
+</html>
