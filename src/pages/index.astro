@@ -1,10 +1,269 @@
+---
+import Nav from '../components/Nav.astro'
+import Footer from '../components/Footer.astro'
+import IndexCaro1 from '../components/IndexCaro1.astro'
+import IndexCaro2 from '../components/IndexCaro2.astro'
+import IndexCaro3 from '../components/IndexCaro3.astro'
+import IndexCaro4 from '../components/IndexCaro4.astro'
+
+const cardItems = [
+    { img: '/assets/index/1.svg', text: 'Издательство научной периодики и&nbsp;книг: выпуск и&nbsp;продвижение российских журналов, книг, публикаций, данных' },
+    { img: '/assets/index/2.svg', text: 'Размещение научных журналов и&nbsp;обеспечение работы редакций в&nbsp;сети Интернет на&nbsp;собственной редакционно-издательской платформе' },
+    { img: '/assets/index/3.svg', text: 'Организация национальной подписки на&nbsp;научные ресурсы Elsevier, Wiley, Cambridge CDC (РФФИ)' },
+    { img: '/assets/index/4.svg', text: 'Проведение научных мероприятий SciCraft и&nbsp;информационно-консультационных тренингов, курсов и&nbsp;вебинаров для ученых на&nbsp;базе собственной Онлайн Академии' },
+]
+
+const items1 = [
+{
+            img: "/assets/index/caro1/1.png",
+            text: "Услуги",
+            id: "image1",
+        },
+        {
+            img: "/assets/index/caro1/2.png",
+            text: "Электронные ресурсы",
+            id: "image2",
+        },
+        {
+            img: "/assets/index/caro1/3.png",
+            text: 'Академия "Эко-Вектор"',
+            id: "image3",
+        },
+        {
+            img: "/assets/index/caro1/4.png",
+            text: "Издательская платформа",
+            id: "image4",
+        },
+        {
+            img: "/assets/index/caro1/5.png",
+            text: "Издание книг",
+            id: "image5",
+        },
+        {
+            img: "/assets/index/caro1/6.png",
+            text: "Издание журналов",
+            id: "image6",
+        },
+]
+
+const items2 = [
+{
+            img: "/assets/images/contact.svg",
+            text: "Реклама в журналах",
+            link: "bg-eco-blue",
+            id: "image101",
+        },
+        {
+            img: "/assets/images/journal-releases.svg",
+            text: "Издание журналов (полный цикл)",
+            link: "bg-eco-green",
+            id: "image102",
+        },
+        {
+            img: "/assets/images/book-releases.svg",
+            text: 'Издание книг (полный цикл)',
+            link: "bg-eco-purple",
+            id: "image103",
+        },
+        {
+            img: "/assets/images/academy.svg",
+            text: "Дополнительное образование",
+            link: "bg-eco-brown",
+            id: "image104",
+        },
+        {
+            img: "/assets/images/book-releases.svg",
+            text: "Издание книг",
+            link: "bg-eco-blue",
+            id: "image105",
+        },
+        // {
+        //     img: "/assets/images/book-releases.svg",
+        //     text: "Издание журналов",
+        //     link: "bg-eco-blue",
+        //     id: "image106",
+        // },
+]
+
+const items3 = [
+{
+            img: "/assets/index/caro3/1.jpeg",
+            name: "1 ноября 2020",
+            text: "Защита диссертации может обрести новый формат",
+            link: "/book-releases",
+            id: "image201",
+        },
+        {
+            img: "/assets/index/caro3/2.png",
+            name: "1 ноября 2020",
+            text: 'Выдающийся американский химик арестован "за связи с Китаем"',
+            link: "/book-releases",
+            id: "image202",
+        },
+        {
+            img: "/assets/index/caro3/3.png",
+            name: "1 ноября 2020",
+            text: 'В Китае разразился скандал, связанный с фальсификацией научных изображений',
+            link: "/book-releases",
+            id: "image203",
+        },
+        {
+            img: "/assets/index/caro3/4.jpeg",
+            name: "1 ноября 2020",
+            text: "В Санкт-Петербурге завершилась шестая Школа научного мастерства SciCraft",
+            link: "/book-releases",
+            id: "image204",
+        },
+        {
+            img: "/assets/index/caro3/5.jpeg",
+            name: "1 ноября 2020",
+            text: "Самара снова встречает Школу SciCraft",
+            link: "/book-releases",
+            id: "image205",
+        },
+]
+
+const items4 = [
+{
+            img: "https://picsum.photos/id/500/200/300",
+            cost: "1600 ₽",
+            name: "Зазерская И.Е.",
+            text: "Акушерство и гинекология в ФГБУ «НМИЦ им. В.А.Алмазова» ORCI OBSERVATIONES",
+            link: "/book-releases",
+            id: "image301",
+        },
+        {
+            img: "https://picsum.photos/id/501/200/300",
+            cost: "1600 ₽",
+            name: "Пальгова Л.К., Жесткова Н.В., Мозговая Е.В.",
+            text: "Болезни печени, связанные с беременностью",
+            link: "/book-releases",
+            id: "image302",
+        },
+        {
+            img: "https://picsum.photos/id/502/200/300",
+            cost: "1600 ₽",
+            name: "Голубев А.Г.",
+            text: 'Биология продолжительности жизни и старения',
+            link: "/book-releases",
+            id: "image303",
+        },
+        {
+            img: "https://picsum.photos/id/503/200/300",
+            cost: "1600 ₽",
+            name: "Никитин А.И.",
+            text: "Акушерство: Как зачать здорового ребенка (гигиена зачатия)",
+            link: "/book-releases",
+            id: "image304",
+        },
+        {
+            img: "https://picsum.photos/id/504/200/300",
+            cost: "1600 ₽",
+            name: "Козлов К.Л., Пальцев М.А., Полякова В.О., Тишко В.В.",
+            text: "Артериальный рестеноз. Молекулярно-биомедицинские аспекты",
+            link: "/book-releases",
+            id: "image305",
+        },
+        {
+            img: "https://picsum.photos/id/505/200/300",
+            cost: "1600 ₽",
+            name: "Фадеев Р.А., Тимченко В.В.",
+            text: "Анализ диагностических моделей челюстей",
+            link: "/book-releases",
+            id: "image306",
+        },
+]
+
+const items5 = [
+    '/assets/partners/1.png',
+    '/assets/partners/2.png',
+    '/assets/partners/3.png',
+    '/assets/partners/4.png',
+    '/assets/partners/5.png',
+    '/assets/partners/6.png',
+]
+---
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
 </head>
 <body>
-    index page
+    <Nav client:visible />
+
+    <div class="bg-eco-blue md:py-5 lg:py-10 xl:py-20">
+        <div class="bg-eco-blue w-full text-white flex flex-col items-center py-5 px-5 sm:flex-row max-w-screen-xl mx-auto xl:pl-24 xl:pr-10 sm:justify-between xl:rounded-b">
+            <div class="flex flex-col space-y-4 lg:space-y-5 md:w-1/2 lg:w-7/12">
+                <h1 class="heading text-white lg:text-5xl" name="heading">&laquo;Эко-Вектор&raquo;&nbsp;&mdash; российская группа компаний</h1>
+                
+                <div class="space-y-5 py-5 font-light lg:text-lg lg:py-10 lg:space-y-8 xl:text-xl">
+                    {cardItems.map((e) => (
+                        <div class="flex items-start space-x-5">
+                            <img class="mt-2" src={e.img} alt="">
+                            <p>{e.text}</p>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+            <img src="/assets/images/contact.svg" alt="icon" class="hidden md:inline-block w-48 md:w-60 lg:w-96">
+        </div>
+    </div>
+    <div class="bg-[#1050b0] text-white">
+        <div class="flex justify-between py-10 px-5 lg:px-20 max-w-screen-lg mx-auto">
+            <div class="flex flex-col items-center">
+                <h1 class="text-3xl lg:text-5xl font-bold">107</h1>
+                <p class="lg:text-xl">ЖУРНАЛОВ</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <h1 class="text-3xl lg:text-5xl font-bold">62013</h1>
+                <p class="lg:text-xl">СТАТЕЙ</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <h1 class="text-3xl lg:text-5xl font-bold">226</h1>
+                <p class="lg:text-xl">КНИГ</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full">
+        <IndexCaro1 visible title={"Направления работы"} linkName={"ПЕРЕЙТИ КО ВСЕМУ КАТАЛОГУ"} link={"/book-releases"} items={items1} />
+    </div>
+    <div class="w-full">
+        <IndexCaro2 visible title={"Услуги"} linkName={"ВСЕ УСЛУГИ"} link={"/services"} items={items2} />
+    </div>
+    <div class="w-full bg-carousel">
+        <IndexCaro3 client:visible title={"Новости издательства"} linkName={"ВСЕ НОВОСТИ"} link={"/book-releases"} items={items3} />
+    </div>
+    <div class="w-full">
+        <IndexCaro4 client:visible title={"Магазин научных изданий"} linkName={"ПЕРЕЙТИ КО ВСЕМУ КАТАЛОГУ"} link={"/book-releases"} items={items4} />
+    </div>
+
+    <div class="space-y-10 py-10 md:container relative">
+        <div class="flex space-y-2 flex-col md:flex-row md:justify-between md:items-center px-5 md:px-0">
+            <h1 class="heading">Партнеры</h1>
+            <a class="flex space-x-5 md:space-x-10 items-center md:mt-2 group" href="/">
+                <p class="whitespace-nowrap text-blue-500 group-hover:text-blue-600 transition font-semibold">ВСЕ ПАРТНЕРЫ</p>
+                <img src="/assets/arrow.svg" alt="" class="group-hover:scale-105 transition duration-200" />
+            </a>
+        </div>
+
+        <div class="px-5 md:px-0">
+            <div class="grid grid-cols-2 gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                {items5.map((e) => (
+                    <a class="place-self-center" href="/">
+                        <img class="w-full" src={e} alt="" />
+                    </a>
+                ))}
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full bg-[#1B1B1D] text-white">
+        <Footer client:visible />
+    </div>
 </body>
 </html>

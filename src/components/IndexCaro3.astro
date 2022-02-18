@@ -1,0 +1,55 @@
+---
+const { items = [], title, link, linkName } = Astro.props;
+---
+
+<script src={Astro.resolve('../functions/slider3.js')} defer hoist></script>
+
+<div class="space-y-10 py-10 md:container relative">
+    <div class="flex space-y-2 flex-col md:flex-row md:justify-between md:items-center px-5 md:px-0">
+        <h1 class="heading">{title}</h1>
+        <a class="flex space-x-5 md:space-x-10 items-center md:mt-2 group" href={link}>
+            <p class="whitespace-nowrap text-blue-500 group-hover:text-blue-600 transition font-semibold">{linkName}</p>
+            <img src="/assets/arrow.svg" alt="" class="group-hover:scale-105 transition duration-200" />
+        </a>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="carousel carousel-center gap-10 relative md:hidden px-5">
+        {items.map((i) => (
+            <div id="slide{index}" class="carousel-item">
+                <a href={i.link} class="w-52">
+                    <img class="aspect-square w-full object-cover" src={i.img} alt="" />
+                    <p class="font-light mt-1">{i.text}</p>
+                    <p class="mt-1 font-semibold text-blue-500">{i.name}</p>
+                </a>
+            </div>
+        ))}
+    </div>
+
+    <!-- DESKTOP -->
+    <div class="hidden md:flex">
+        <button id="prev3" class="h-52">
+            <svg xmlns="http://www.w3.org/2000/svg" class="chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <div class="flex overflow-hidden mx-auto w-[740px] lg:w-[960px] xl:w-[1024px]">
+            <div class="flex flex-nowrap gap-12 carousel-slide3">
+                {items.map((i) => (
+                    <div id="slide{index}" class="carousel-item item3">
+                        <a href={i.link} class="w-52">
+                            <img class="aspect-square w-full object-cover" src={i.img} alt="" />
+                            <p class="font-light mt-1">{i.text}</p>
+                            <p class="mt-1 font-semibold text-blue-500">{i.name}</p>
+                        </a>
+                    </div>
+                ))}
+            </div>
+        </div>
+        <button id="next3" class="h-52">
+            <svg xmlns="http://www.w3.org/2000/svg" class="chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+</div>
