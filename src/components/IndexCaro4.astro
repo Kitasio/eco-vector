@@ -17,7 +17,7 @@ const { items = [], title, link, linkName } = Astro.props;
     <div class="carousel carousel-center gap-10 relative md:hidden px-5">
         {items.map((i) => (
             <div id="slide{index}" class="carousel-item">
-                <a href={i.link} class="w-52">
+                <a href={i.link} class="w-52 mr-5">
                     <img class="aspect-[2/3] w-full" src={i.img} alt="" />
                     <p class="text-xl font-bold mt-1">{i.cost}</p>
                     <p class="mt-1 font-semibold text-blue-500">{i.name}</p>

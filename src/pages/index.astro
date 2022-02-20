@@ -182,6 +182,16 @@ const items5 = [
     '/assets/partners/5.png',
     '/assets/partners/6.png',
 ]
+
+const services = [
+    '/assets/services/1.png',
+    '/assets/services/2.png',
+    '/assets/services/3.png',
+    '/assets/services/4.png',
+    '/assets/services/5.png',
+    '/assets/services/6.png',
+    '/assets/services/7.png',
+]
 ---
 
 <html lang="en">
@@ -232,9 +242,25 @@ const items5 = [
     <div class="w-full">
         <IndexCaro1 visible title={"Направления работы"} linkName={"ПЕРЕЙТИ КО ВСЕМУ КАТАЛОГУ"} link={"/book-releases"} items={items1} />
     </div>
-    <div class="w-full">
-        <IndexCaro2 visible title={"Услуги"} linkName={"ВСЕ УСЛУГИ"} link={"/services"} items={items2} />
+    
+    <div class="space-y-10 py-10 container relative">
+        <div class="flex space-y-2 flex-col md:flex-row md:justify-between md:items-center">
+            <h1 class="heading">Услуги</h1>
+            <a class="flex space-x-5 md:space-x-10 items-center md:mt-2 group" href="/">
+                <p class="whitespace-nowrap text-blue-500 group-hover:text-blue-600 transition font-semibold">ВСЕ УСЛУГИ</p>
+                <img src="/assets/arrow.svg" alt="" class="group-hover:scale-105 transition duration-200" />
+            </a>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2 md:gap-10 lg:grid-cols-3">
+            {services.map((e) => (
+                <a href="">
+                    <img class="w-full object-cover" src={e} />
+                </a>
+            ))}
+        </div>
     </div>
+
     <div class="w-full bg-carousel">
         <IndexCaro3 client:visible title={"Новости издательства"} linkName={"ВСЕ НОВОСТИ"} link={"/book-releases"} items={items3} />
     </div>
