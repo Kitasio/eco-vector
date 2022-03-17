@@ -3,11 +3,11 @@ import Nav from '../../components/Nav.astro'
 import Footer from '../../components/Footer.astro'
 
 const news = [
-    { img: 'https://picsum.photos/id/506/500/700', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/1' },
-    { img: 'https://picsum.photos/id/507/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/2' },
-    { img: 'https://picsum.photos/id/508/500/400', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/3' },
-    { img: 'https://picsum.photos/id/509/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
-    { img: 'https://picsum.photos/id/510/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
+    { img: 'https://picsum.photos/id/506/400/700', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/1' },
+    { img: 'https://picsum.photos/id/507/300/800', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/2' },
+    { img: 'https://picsum.photos/id/508/200/400', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/3' },
+    { img: 'https://picsum.photos/id/509/500/700', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
+    { img: 'https://picsum.photos/id/510/400/800', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
     { img: 'https://picsum.photos/id/511/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
     { img: 'https://picsum.photos/id/512/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
     { img: 'https://picsum.photos/id/513/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
@@ -34,7 +34,9 @@ const news = [
             {news.map((e) => (
                 <div>
                     <a class="space-y-2 md:flex md:space-y-0 gap-10" href={e.link}>
-                        <img class="w-full lg:w-2/3 aspect-video object-cover" src={e.img} alt="">
+                        <div class="w-full md:w-3/4">
+                            <img class="w-full h-full aspect-video object-cover" src={e.img} alt="">
+                        </div>
                         <div class="flex flex-col justify-between">
                             <div>
                                 <h2 class="font-bold mb-2 sm:text-lg md:text-xl">{e.title}</h2>
