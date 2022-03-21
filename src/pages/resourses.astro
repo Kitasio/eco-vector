@@ -109,33 +109,34 @@ const items = [
                         </div>
                         <h1 class="heading place-self-center justify-self-start">{i.title}</h1>
                     </div>
+                </label>
 
-                    <div class="grid mt-5 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        {i.links.map((i) => (
-                            <label for={i.title} class="cursor-pointer">
-                                <p class="md:flex shadow-brand p-3 text-gray-600 text-lg hover:text-gray-900">{i.title}</p>
-                            </label>
-                            <input type="checkbox" id={i.title} class="modal-toggle">
-                            <div class="modal">
-                                <div class="w-full flex justify-center items-center">
-                                    <div class="bg-white rounded-xl sm:rounded p-5 lg:p-8 w-full md:w-10/12 lg:w-2/3 xl:w-7/12 sm:mx-5 overflow-scroll">
-                                        <div class="flex items-center justify-between border-b border-gray-300 pb-5">
-                                            <h1 class="text-2xl font-semibold">{i.title}</h1>
-                                            <label class="cursor-pointer" for={i.title}>
-                                                <img class="w-7 h-7" src="/assets/icons/x.svg" alt="close">
-                                            </label>  
-                                        </div>
-                                        <div class="max-h-[60vh] md:max-h-[70vh] w-full overflow-scroll pt-5">
-                                            <div class="prose max-w-none prose-headings:mt-5 prose-p:my-0 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-500 hover:prose-a:underline">
-                                                {i.html}
-                                            </div>
+                <div class="grid mt-5 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                    {i.links.map((i) => (
+                        <label for={i.title} class="cursor-pointer">
+                            <p class="md:flex shadow-brand p-3 text-gray-600 text-lg hover:text-gray-900">{i.title}</p>
+                        </label>
+                        <input type="checkbox" id={i.title} class="modal-toggle">
+                        <div class="modal">
+                            <div class="w-full flex justify-center items-center">
+                                <div class="bg-white rounded-xl sm:rounded p-5 lg:p-8 w-full md:w-10/12 lg:w-2/3 xl:w-7/12 sm:mx-5 overflow-scroll">
+                                    <div class="flex items-center justify-between border-b border-gray-300 pb-5">
+                                        <h1 class="text-2xl font-semibold">{i.title}</h1>
+                                        <label class="cursor-pointer" for={i.title}>
+                                            <img class="w-7 h-7" src="/assets/icons/x.svg" alt="close">
+                                        </label>  
+                                    </div>
+                                    <div class="max-h-[60vh] md:max-h-[70vh] w-full overflow-scroll pt-5 modal-container">
+                                        <div class="prose max-w-none prose-headings:mt-5 prose-p:my-0 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-500 hover:prose-a:underline">
+                                            {i.html}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </label>
+                        </div>
+                    ))}
+                </div>
+
                 <input type="checkbox" id={i.title} class="modal-toggle"> 
                 <div class="modal">
                     <div class="w-full flex justify-center items-center">
@@ -146,7 +147,7 @@ const items = [
                                     <img class="w-7 h-7" src="/assets/icons/x.svg" alt="close">
                                 </label>  
                             </div>
-                            <div class="max-h-[60vh] md:max-h-[70vh] w-full overflow-scroll pt-5">
+                            <div class="max-h-[60vh] md:max-h-[70vh] w-full overflow-scroll pt-5 modal-container">
                                 <div class="prose max-w-none prose-headings:mt-5 prose-p:my-0 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:text-blue-500 hover:prose-a:underline">
                                     {i.html}
                                 </div>
