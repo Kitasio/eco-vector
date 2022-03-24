@@ -28,4 +28,7 @@
 }
 .modal-container::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
+    width: 0;
+  color: red;
 }
+
