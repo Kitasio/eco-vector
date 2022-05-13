@@ -3,7 +3,7 @@ import Nav from '../../components/Nav.astro'
 import Footer from '../../components/Footer.astro'
 
 const news = [
-    { img: 'https://picsum.photos/id/506/400/700', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/1' },
+    { img: 'https://picsum.photos/id/506/400/700', title: 'Биологи обнаружили новое месторождение полезных бактерий fsndkjfdk sfdjkf skdf jsdjkf sdk ksd ', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words fsdjkfjs ksdfjs kf skdf ksdfj jksdfkfsdkjsdfks djkf sjdkffj kjksdfjsdjkfkjsd', date: '1 ноября 2020', link: '/news/1' },
     { img: 'https://picsum.photos/id/507/300/800', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/2' },
     { img: 'https://picsum.photos/id/508/200/400', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/3' },
     { img: 'https://picsum.photos/id/509/500/700', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
@@ -14,7 +14,7 @@ const news = [
     { img: 'https://picsum.photos/id/514/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
     { img: 'https://picsum.photos/id/515/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
     { img: 'https://picsum.photos/id/516/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
-    { img: 'https://picsum.photos/id/517/500/500', title: 'Биологи обнаружили новое месторождение полезных бактерий', text: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
+    { img: 'https://picsum.photos/id/517/500/500', title: 'Биологи обнаружили', text: 'the majority have suffered alteration in some form, by injected humour, or randomised words', date: '1 ноября 2020', link: '/news/4' },
 ]
 ---
 
@@ -34,10 +34,10 @@ const news = [
             {news.map((e) => (
                 <div>
                     <a class="space-y-2 md:flex md:space-y-0 gap-10" href={e.link}>
-                        <div class="w-full md:w-3/4">
+                        <div class="w-full md:w-2/5">
                             <img class="w-full h-full aspect-video object-cover" src={e.img} alt="">
                         </div>
-                        <div class="flex flex-col justify-between">
+                        <div class="flex flex-col justify-between md:w-3/5">
                             <div>
                                 <h2 class="font-bold mb-2 sm:text-lg md:text-xl">{e.title}</h2>
                                 <p class="sm:text-lg">{e.text}</p>
