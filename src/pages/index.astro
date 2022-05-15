@@ -253,11 +253,18 @@ const services = [
         </div>
 
         <div class="grid gap-5 sm:grid-cols-2 md:gap-10 lg:grid-cols-3">
-            {services.map((e) => (
-                <a href="">
-                    <img class="w-full object-cover" src={e} />
-                </a>
-            ))}
+            <a class="flex" href="/">
+                <div style="background-color: #231f20;" class="flex gap-5 justify-between items-center w-full p-7 rounded-md text-white">
+                    <p class="text-xl font-semibold text-gray-100">Дополнительное образование</p>
+                    <img class="w-16 h-16" src="/assets/index/1.svg" alt="">
+                </div>
+            </a>
+            <a class="flex" href="/">
+                <div style="background-color: #39a297;" class="flex gap-5 justify-between items-center w-full p-7 rounded-md text-white">
+                    <p class="text-xl font-semibold text-gray-100">Перевод на другие языки</p>
+                    <img class="w-16 h-16" src="/assets/index/3.svg" alt="">
+                </div>
+            </a>
         </div>
     </div>
 
